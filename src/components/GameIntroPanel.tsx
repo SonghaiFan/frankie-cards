@@ -46,7 +46,7 @@ const GameIntroPanel: React.FC<GameIntroPanelProps> = ({
           onClick={handleClick}
           whileTap={{ scale: 0.98 }}
           transition={{ layout: { duration: reducedMotion ? 0 : 0.82, ease: languageLayoutEase } }}
-          aria-label="FrankCards"
+          aria-label="Frankie Cards"
         >
           <span className="sr-only">Frank</span>
           <span aria-hidden="true" className="frank-signature" />

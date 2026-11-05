@@ -1,10 +1,10 @@
 {
-  "name": "frankcards",
+  "name": "frankie-cards",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "description": "Guided, face-to-face conversations in a shared card-pack experience",
-  "author": "FrankCards",
+  "author": "Frankie Cards",
   "keywords": [
     "conversation",
     "cards",

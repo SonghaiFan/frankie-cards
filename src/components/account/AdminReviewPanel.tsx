@@ -108,7 +108,7 @@ export default function AdminReviewPanel({ onClose, onTopicsChanged, onUseTopic 
         </button>
 
         <div className="account-topics-header">
-          <p className="account-kicker">FrankCards</p>
+          <p className="account-kicker">Frankie Cards</p>
           <h2 id="admin-review-title">{t("admin.reviewTitle")}</h2>
           <p>{t("admin.reviewBody")}</p>
         </div>

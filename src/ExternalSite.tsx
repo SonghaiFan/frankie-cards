@@ -3,7 +3,7 @@ import "./ExternalSite.css";
 type ExternalPage = "marketing" | "privacy" | "support";
 
 const Brand = () => (
-  <a className="site-brand" href="/" aria-label="FrankCards home">
+  <a className="site-brand" href="/" aria-label="Frankie Cards home">
     <img src="/frank-signature.svg" alt="Frank" width="78" height="33" />
     <strong>Cards</strong>
   </a>
@@ -21,8 +21,8 @@ const Header = ({ page }: { page: ExternalPage }) => (
 
 const Footer = ({ page }: { page: ExternalPage }) => (
   <footer className="site-footer">
-    <span>FrankCards</span>
-    <span><a href="/privacy/">Privacy</a><span aria-hidden="true"> · </span><a href={page === "marketing" ? "/support/" : "/marketing/"}>{page === "marketing" ? "Support" : "About FrankCards"}</a></span>
+    <span>Frankie Cards</span>
+    <span><a href="/privacy/">Privacy</a><span aria-hidden="true"> · </span><a href={page === "marketing" ? "/support/" : "/marketing/"}>{page === "marketing" ? "Support" : "About Frankie Cards"}</a></span>
   </footer>
 );
 
@@ -34,9 +34,9 @@ function MarketingPage() {
         <section className="marketing-hero" aria-labelledby="marketing-title">
           <div className="marketing-copy">
             <h1 id="marketing-title">Frankly Talking.</h1>
-            <p>Use the phone in your hand—or place it between you and use it like a physical card pack. FrankCards guides a face-to-face conversation from the first question to a meaningful close.</p>
+            <p>Use the phone in your hand—or place it between you and use it like a physical card pack. Frankie Cards guides a face-to-face conversation from the first question to a meaningful close.</p>
             <div className="marketing-actions">
-              <a className="button" href="/">Open FrankCards</a>
+              <a className="button" href="/">Open Frankie Cards</a>
               <a className="button secondary" href="/support/">Get support</a>
             </div>
           </div>
@@ -44,7 +44,7 @@ function MarketingPage() {
             <img src="/media/frankcards-flat-conversation.jpg" alt="Two people sharing coffee and conversation cards at a table" width="1536" height="1024" />
           </figure>
         </section>
-        <section className="marketing-note" aria-label="About FrankCards">
+        <section className="marketing-note" aria-label="About Frankie Cards">
           <h2>A conversation with direction.</h2>
           <p>Each pack follows a thoughtful flow—from an easy opening, through deeper exploration and reflection, to a natural close. Start with a curated pack, or create one for the people and moment in front of you.</p>
         </section>
@@ -61,24 +61,24 @@ function SupportPage() {
       <main className="support-main">
         <section className="support-hero" aria-labelledby="support-title">
           <h1 id="support-title">Support for a better conversation.</h1>
-          <p>Find quick answers below, or email us when you need a hand with FrankCards.</p>
+          <p>Find quick answers below, or email us when you need a hand with Frankie Cards.</p>
         </section>
         <div className="support-grid">
           <section className="support-section" aria-labelledby="questions-title">
             <h2 id="questions-title">Common questions</h2>
             <div className="support-questions">
-              <details><summary>How do I start a card pack?</summary><p>Open FrankCards, choose a pack, then start the session. Pass the device around and let each card guide the next turn.</p></details>
+              <details><summary>How do I start a card pack?</summary><p>Open Frankie Cards, choose a pack, then start the session. Pass the device around and let each card guide the next turn.</p></details>
               <details><summary>Why do I need an account?</summary><p>Built-in packs can be explored without an account. An account is needed to create and save your own topics, upload an avatar, like Community packs, or submit a topic for review.</p></details>
               <details><summary>How do Community topics work?</summary><p>Topics you create stay private until you submit them. Community submissions are reviewed before they are published.</p></details>
-              <details><summary>What happens when I use AI-assisted drafting?</summary><p>It is optional. Your topic and card settings are sent to the compatible AI provider you select. Your API key is used for that request and is not saved by FrankCards.</p></details>
-              <details><summary>How do I delete my account?</summary><p>In FrankCards, open My Topics, expand Public profile, and choose Delete account. Type DELETE to confirm permanent removal of your account and associated data. If you cannot access the app, contact us from the email address linked to your account.</p></details>
+              <details><summary>What happens when I use AI-assisted drafting?</summary><p>It is optional. Your topic and card settings are sent to the compatible AI provider you select. Your API key is used for that request and is not saved by Frankie Cards.</p></details>
+              <details><summary>How do I delete my account?</summary><p>In Frankie Cards, open My Topics, expand Public profile, and choose Delete account. Type DELETE to confirm permanent removal of your account and associated data. If you cannot access the app, contact us from the email address linked to your account.</p></details>
             </div>
           </section>
           <aside className="support-contact" aria-labelledby="contact-title">
             <h2 id="contact-title">Still need help?</h2>
             <p>Tell us what happened, what device you use, and any error message you saw.</p>
-            <a className="button" href="mailto:hello@frankcards.songhai.one?subject=FrankCards%20support">Email FrankCards support</a>
-            <small>For account help, contact us from the email address connected to your FrankCards account.</small>
+            <a className="button" href="mailto:hello@frankcards.songhai.one?subject=Frankie%20Cards%20support">Email Frankie Cards support</a>
+            <small>For account help, contact us from the email address connected to your Frankie Cards account.</small>
           </aside>
         </div>
       </main>
@@ -95,7 +95,7 @@ function PrivacyPage() {
         <section className="privacy-hero" aria-labelledby="privacy-title">
           <p className="privacy-kicker">Effective 8 September 2026</p>
           <h1 id="privacy-title">Privacy that stays clear.</h1>
-          <p>This policy explains what FrankCards collects, why it is used, and the choices you have.</p>
+          <p>This policy explains what Frankie Cards collects, why it is used, and the choices you have.</p>
         </section>
         <div className="privacy-layout">
           <nav className="privacy-nav" aria-label="Privacy policy sections">
@@ -106,12 +106,12 @@ function PrivacyPage() {
             <a href="#contact">Contact us</a>
           </nav>
           <article className="privacy-copy">
-            <p>FrankCards is a conversation-card app. We collect only the information needed to provide accounts, personal topics, Community features, and optional AI-assisted drafting.</p>
-            <section id="data"><h2>Information we collect</h2><p><strong>Account information.</strong> If you create an account, we collect your email address and an account identifier. You may also provide a display name and an avatar image.</p><p><strong>Content you create.</strong> We store the titles, categories, questions, cards, and related details of topics you create. Topics remain private unless you submit them for Community review. Published Community topics may display your chosen profile name and avatar.</p><p><strong>Interactions and preferences.</strong> We store Community pack likes with your account. Your language, theme, reading-side preference, and a local unlock preference may be stored on your device.</p><p><strong>Optional AI-assisted drafting.</strong> If you choose to use it, the topic, audience, language, card settings, and prompt you provide are sent to the compatible AI provider you select. Your API key is used for that request and is not saved by FrankCards.</p></section>
+            <p>Frankie Cards is a conversation-card app. We collect only the information needed to provide accounts, personal topics, Community features, and optional AI-assisted drafting.</p>
+            <section id="data"><h2>Information we collect</h2><p><strong>Account information.</strong> If you create an account, we collect your email address and an account identifier. You may also provide a display name and an avatar image.</p><p><strong>Content you create.</strong> We store the titles, categories, questions, cards, and related details of topics you create. Topics remain private unless you submit them for Community review. Published Community topics may display your chosen profile name and avatar.</p><p><strong>Interactions and preferences.</strong> We store Community pack likes with your account. Your language, theme, reading-side preference, and a local unlock preference may be stored on your device.</p><p><strong>Optional AI-assisted drafting.</strong> If you choose to use it, the topic, audience, language, card settings, and prompt you provide are sent to the compatible AI provider you select. Your API key is used for that request and is not saved by Frankie Cards.</p></section>
             <section id="use"><h2>How we use information</h2><p>We use account information to sign you in, send account confirmation or password-reset emails, and protect your account. We use your profile, topics, and likes to provide the features you request. We use optional AI inputs only to generate the draft you ask for.</p></section>
-            <section id="sharing"><h2>When information is shared</h2><p>FrankCards uses Supabase to provide authentication, database, and avatar storage services. Public Community topics, profile names, avatars, and aggregate pack likes can be visible to other FrankCards users. When you choose AI-assisted drafting, your input is sent directly to the provider you select, such as OpenAI, DeepSeek, Kimi, or a compatible custom provider.</p><p>FrankCards does not use your information for cross-app advertising tracking and does not sell personal information.</p></section>
-            <section id="retention"><h2>Retention and deletion</h2><p>We keep your account information and private content while your account is active. You can delete your own topics and avatar from the app where those controls are available. You can permanently delete your account from My Topics, under Public profile. This removes your account, profile, avatar, topics, Community submissions, and likes. If you cannot access the app, email us from the address linked to the account with the subject “FrankCards account deletion”.</p><p>Some information may be retained where needed to prevent abuse, resolve disputes, meet legal obligations, or enforce our terms.</p></section>
-            <section id="contact"><h2>Contact us</h2><p>For privacy questions or a deletion request, email <a href="mailto:hello@frankcards.songhai.one?subject=FrankCards%20privacy">hello@frankcards.songhai.one</a>.</p></section>
+            <section id="sharing"><h2>When information is shared</h2><p>Frankie Cards uses Supabase to provide authentication, database, and avatar storage services. Public Community topics, profile names, avatars, and aggregate pack likes can be visible to other Frankie Cards users. When you choose AI-assisted drafting, your input is sent directly to the provider you select, such as OpenAI, DeepSeek, Kimi, or a compatible custom provider.</p><p>Frankie Cards does not use your information for cross-app advertising tracking and does not sell personal information.</p></section>
+            <section id="retention"><h2>Retention and deletion</h2><p>We keep your account information and private content while your account is active. You can delete your own topics and avatar from the app where those controls are available. You can permanently delete your account from My Topics, under Public profile. This removes your account, profile, avatar, topics, Community submissions, and likes. If you cannot access the app, email us from the address linked to the account with the subject “Frankie Cards account deletion”.</p><p>Some information may be retained where needed to prevent abuse, resolve disputes, meet legal obligations, or enforce our terms.</p></section>
+            <section id="contact"><h2>Contact us</h2><p>For privacy questions or a deletion request, email <a href="mailto:hello@frankcards.songhai.one?subject=Frankie%20Cards%20privacy">hello@frankcards.songhai.one</a>.</p></section>
             <section><h2>Changes to this policy</h2><p>If this policy changes materially, we will update this page and revise its effective date.</p></section>
           </article>
         </div>

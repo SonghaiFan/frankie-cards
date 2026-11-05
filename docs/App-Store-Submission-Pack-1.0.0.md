@@ -1,4 +1,4 @@
-# FrankCards 1.0.0 — App Store 提交资料包
+# Frankie Cards 1.0.0 — App Store 提交资料包
 
 准备日期：2026-09-08  
 App Store Connect Apple ID：`6809699079`  
@@ -13,7 +13,7 @@ SKU：`frankcards-ios`
 
 | 字段 | 建议填写 |
 | --- | --- |
-| App 名称 | FrankCards |
+| App 名称 | Frankie Cards |
 | 副标题（30 字符内） | Guided talks, card by card |
 | 主类别 | Lifestyle |
 | 次类别 | Entertainment（可选） |
@@ -25,7 +25,7 @@ SKU：`frankcards-ios`
 ### Promotional Text（170 字符内，可后续更新）
 
 ```text
-Use your phone like a shared card pack. FrankCards guides face-to-face conversations from an easy opening to deeper reflection and a meaningful close.
+Use your phone like a shared card pack. Frankie Cards guides face-to-face conversations from an easy opening to deeper reflection and a meaningful close.
 ```
 
 ### Description
@@ -33,11 +33,11 @@ Use your phone like a shared card pack. FrankCards guides face-to-face conversat
 ```text
 Frankly Talking.
 
-Use the phone in your hand—or place it between you and use it like a physical card pack. Choose a pack, take turns, and let FrankCards guide the conversation from an easy opening through deeper exploration and reflection to a natural close.
+Use the phone in your hand—or place it between you and use it like a physical card pack. Choose a pack, take turns, and let Frankie Cards guide the conversation from an easy opening through deeper exploration and reflection to a natural close.
 
 Want something more personal? Create a private topic, shape its cards and categories, and make the conversation fit the people in front of you. You can also submit a topic for Community review.
 
-FrankCards is designed for face-to-face conversation: not a stream of random prompts, but a thoughtful flow with direction.
+Frankie Cards is designed for face-to-face conversation: not a stream of random prompts, but a thoughtful flow with direction.
 
 Features
 • Curated conversation-card packs
@@ -47,7 +47,7 @@ Features
 • Optional AI-assisted draft generation with a provider and key you choose
 • English and Simplified Chinese
 
-Some features require an account. AI-assisted generation sends the topic you enter to the AI provider you select; your API key is used only for that request and is not saved by FrankCards.
+Some features require an account. AI-assisted generation sends the topic you enter to the AI provider you select; your API key is used only for that request and is not saved by Frankie Cards.
 ```
 
 ### Keywords（100 字符内；逗号分隔）
@@ -59,7 +59,7 @@ conversation,questions,reflection,relationships,icebreaker,card game,connection,
 ### Review Notes（在产品门槛完成后填写）
 
 ```text
-FrankCards is a conversation-card app. Built-in card packs can be explored without signing in.
+Frankie Cards is a conversation-card app. Built-in card packs can be explored without signing in.
 
 Signing in is required only to create, save or submit personal topics, upload an avatar, and like Community packs. Community submissions are reviewed before publication.
 
@@ -74,7 +74,7 @@ AI-assisted draft generation is optional. It requires the reviewer to supply an 
 
 在 App Store Connect 当前界面要求的 iPhone 尺寸中选择一种；不要把模拟器外框、鼠标、调试菜单或状态错误一起拍入。首三张最重要，因为它们通常用于产品页预览。
 
-1. **主视觉 / 首屏**：FrankCards 标志、喝咖啡的人物、一个清晰的主操作。
+1. **主视觉 / 首屏**：Frankie Cards 标志、喝咖啡的人物、一个清晰的主操作。
 2. **正在对话**：一张问题卡及进度，表现“轮流聊”的核心体验。
 3. **自定义模式**：创建主题或筛选卡包，但画面只呈现一个明确任务。
 4. **Topic Studio**：编辑一个自己的主题，突出“私有、可定制”。
@@ -94,7 +94,7 @@ AI-assisted draft generation is optional. It requires the reviewer to supply an 
 | Photos | 用户可上传 JPEG、PNG 或 WebP 头像；头像公开显示 | App Functionality / User Content | 是 | 否（按当前代码） |
 | User Content | 用户创建的主题标题、副标题、类别、问题、卡片内容 | App Functionality / User Content | 是 | 否（按当前代码） |
 | Product Interaction | Community 卡包点赞 | App Functionality | 是 | 否（按当前代码） |
-| Other User Content sent to AI | 可选 AI 生成时：用户输入的主题、受众、语言、卡片设置；发送到用户选择的 AI 服务商 | App Functionality | 取决于服务商与请求内容 | 否（FrankCards 当前未见广告追踪代码） |
+| Other User Content sent to AI | 可选 AI 生成时：用户输入的主题、受众、语言、卡片设置；发送到用户选择的 AI 服务商 | App Functionality | 取决于服务商与请求内容 | 否（Frankie Cards 当前未见广告追踪代码） |
 
 发布前必须与实际 Supabase 项目设置及所启用 AI 供应商再次核对：是否记录 IP、诊断日志、邮件投递日志、分析或崩溃信息。若启用，必须反映在 App Privacy 中。
 

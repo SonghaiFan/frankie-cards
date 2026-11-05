@@ -1,6 +1,6 @@
-# FrankCards Icon Composer layers
+# Frankie Cards Icon Composer layers
 
-Import the SVGs in numerical order into Icon Composer. They use the actual FrankCards female figure and product card language.
+Import the SVGs in numerical order into Icon Composer. They use the actual Frankie Cards female figure and product card language.
 
 1. `01-background.svg` — full-bleed product background
 2. `02-conversation-card.svg` — two overlapping existing-style conversation cards in the app's pale blue and ivory

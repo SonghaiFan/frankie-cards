@@ -210,7 +210,7 @@ export default function AuthDialog({ initialMode = "signIn", onClose }: AuthDial
         </button>
 
         <aside className="account-auth-benefits" aria-label={t("account.unlockTitle")}>
-          <p className="account-kicker">FrankCards</p>
+          <p className="account-kicker">Frankie Cards</p>
           <h3>{t("account.unlockTitle")}</h3>
           <p>{t("account.unlockBody")}</p>
           <ul>
@@ -224,7 +224,7 @@ export default function AuthDialog({ initialMode = "signIn", onClose }: AuthDial
 
         {status === "disabled" ? (
           <div className="account-sheet-copy">
-            <p className="account-kicker">FrankCards</p>
+            <p className="account-kicker">Frankie Cards</p>
             <h2 id="account-auth-title">{t("account.notConnectedTitle")}</h2>
             <p>{t("account.notConnectedBody")}</p>
             <button className="account-primary-button" type="button" onClick={onClose}>{t("account.keepExploring")}</button>
@@ -357,7 +357,7 @@ export default function AuthDialog({ initialMode = "signIn", onClose }: AuthDial
                   <FontAwesomeIcon icon={faArrowLeft} />
                   <span>{t("common.back")}</span>
                 </button>
-                <p className="account-kicker">FrankCards</p>
+                <p className="account-kicker">Frankie Cards</p>
                 <h2 id="account-auth-title">{t("account.forgotPasswordTitle")}</h2>
                 <p>{t("account.forgotPasswordBody")}</p>
                 <label className="account-field">
@@ -389,7 +389,7 @@ export default function AuthDialog({ initialMode = "signIn", onClose }: AuthDial
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: mode === "signUp" ? 10 : -10 }}
               >
-                <p className="account-kicker">FrankCards</p>
+                <p className="account-kicker">Frankie Cards</p>
                 <h2 id="account-auth-title">{t(mode === "signUp" ? "account.createAccountTitle" : "account.signInTitle")}</h2>
                 <p>{t(mode === "signUp" ? "account.createAccountBody" : "account.signInBody")}</p>
 

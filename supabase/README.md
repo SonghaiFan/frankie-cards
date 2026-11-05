@@ -1,4 +1,4 @@
-# FrankCards Supabase foundation
+# Frankie Cards Supabase foundation
 
 This folder owns the database schema and row-level security policies for user-created topics.
 
@@ -21,7 +21,7 @@ Copy `.env.example` to `.env.local` and provide the project URL and publishable 
 
 ## Email authentication
 
-FrankCards uses email and password authentication. New accounts receive a signup confirmation link, the confirmation screen can resend that link, and the sign-in screen can send a password recovery link. After a recovery link returns to the app, the user is prompted to choose a new password.
+Frankie Cards uses email and password authentication. New accounts receive a signup confirmation link, the confirmation screen can resend that link, and the sign-in screen can send a password recovery link. After a recovery link returns to the app, the user is prompted to choose a new password.
 
 Push the local Auth configuration to a hosted project with:
 
@@ -37,11 +37,11 @@ Supabase's default email delivery is intended for development and may be rate-li
 
 Database migrations do not upload hosted Auth email templates. In the Supabase Dashboard, open **Authentication → Emails → Templates**, then update these templates:
 
-- **Confirm signup**: subject `Confirm your FrankCards account`; paste `supabase/templates/confirmation.html`.
-- **Reset password**: subject `Reset your FrankCards password`; paste `supabase/templates/recovery.html`.
-- **Magic link**: subject `Your FrankCards sign-in link`; paste `supabase/templates/magic_link.html` if magic-link login is enabled later.
+- **Confirm signup**: subject `Confirm your Frankie Cards account`; paste `supabase/templates/confirmation.html`.
+- **Reset password**: subject `Reset your Frankie Cards password`; paste `supabase/templates/recovery.html`.
+- **Magic link**: subject `Your Frankie Cards sign-in link`; paste `supabase/templates/magic_link.html` if magic-link login is enabled later.
 
-Save each template separately. The HTML uses Supabase's `{{ .ConfirmationURL }}` variable, includes a plain fallback link, and carries the FrankCards signature. The handwritten wordmark is served as a PNG from the public GitHub repository through jsDelivr for broad email-client support, so push `public/frank-signature-email.png` before testing the hosted templates. The matching entries in `supabase/config.toml` apply to the local Supabase stack after restarting it with `supabase stop && supabase start`.
+Save each template separately. The HTML uses Supabase's `{{ .ConfirmationURL }}` variable, includes a plain fallback link, and carries the Frankie Cards signature. The handwritten wordmark is served as a PNG from the public GitHub repository through jsDelivr for broad email-client support, so push `public/frank-signature-email.png` before testing the hosted templates. The matching entries in `supabase/config.toml` apply to the local Supabase stack after restarting it with `supabase stop && supabase start`.
 
 ## Account deletion Edge Function
 

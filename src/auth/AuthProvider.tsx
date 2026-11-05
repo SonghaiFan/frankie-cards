@@ -366,7 +366,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         body: { confirmation: "DELETE" },
       });
       if (deleteError || !data?.deleted) {
-        throw new Error("Your account could not be deleted. Please try again or contact FrankCards support.");
+        throw new Error("Your account could not be deleted. Please try again or contact Frankie Cards support.");
       }
 
       // The server invalidates the account first. Clear this device's persisted
@@ -380,7 +380,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (deleteError) {
       const message = deleteError instanceof Error
         ? deleteError.message
-        : "Your account could not be deleted. Please try again or contact FrankCards support.";
+        : "Your account could not be deleted. Please try again or contact Frankie Cards support.";
       setError(message);
       throw new Error(message);
     } finally {

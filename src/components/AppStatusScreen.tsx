@@ -25,7 +25,7 @@ export default function AppStatusScreen({ variant, onRetry }: AppStatusScreenPro
         </div>
 
         <div className="app-status-copy">
-          <p className="app-status-kicker">FrankCards</p>
+          <p className="app-status-kicker">Frankie Cards</p>
           <h1>{title}</h1>
           <p>{body}</p>
         </div>

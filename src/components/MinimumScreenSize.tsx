@@ -61,7 +61,7 @@ const MinimumScreenSize: React.FC<MinimumScreenSizeProps> = ({ height, width }) 
         >
           {t(
             "minimumScreen.description",
-            "FrankCards requires a little more room to display properly. Please enlarge the window or rotate your device."
+            "Frankie Cards requires a little more room to display properly. Please enlarge the window or rotate your device."
           )}
         </motion.p>
 

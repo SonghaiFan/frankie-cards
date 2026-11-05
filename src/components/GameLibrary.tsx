@@ -826,7 +826,7 @@ const QuickGameLibrary: React.FC<QuickGameLibraryProps> = ({
                 >
                   <motion.h1
                     layoutId="frankcards-brand"
-                    aria-label="FrankCards"
+                    aria-label="Frankie Cards"
                     transition={{ layout: { duration: reducedMotion ? 0 : 0.92, ease: deceleratingEase } }}
                   >
                     <span className="sr-only">Frank</span>

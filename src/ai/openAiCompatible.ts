@@ -206,7 +206,7 @@ export async function generateConversationDraft(input: GenerateConversationInput
   });
 
   const system = [
-    "You design original FrankCards conversation packs.",
+    "You design original Frankie Cards conversation packs.",
     "Create prompts that lead to specific stories, honest reflection and meaningful disagreement.",
     "Do not copy existing commercial conversation-card wording. Avoid generic self-help platitudes.",
     sharpnessDirection,

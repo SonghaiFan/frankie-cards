@@ -45,7 +45,7 @@ try {
 try {
   await access(sourceIcon);
 } catch {
-  throw new Error("The FrankCards SVG icon source is missing.");
+  throw new Error("The Frankie Cards SVG icon source is missing.");
 }
 
 const iconNames = (await readdir(iosSourceDirectory))

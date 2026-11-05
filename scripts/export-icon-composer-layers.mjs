@@ -54,7 +54,7 @@ function directGroups(innerMarkup) {
 
 const master = await readFile(source, "utf8");
 const figureStart = master.indexOf('<g id="female"');
-if (figureStart === -1) throw new Error("The FrankCards master icon has no female figure.");
+if (figureStart === -1) throw new Error("The Frankie Cards master icon has no female figure.");
 
 const openingEnd = master.indexOf(">", figureStart) + 1;
 const figureEnd = matchingGroupEnd(master, figureStart);
@@ -64,7 +64,7 @@ const groups = directGroups(figureInner);
 
 const base = groups.filter(({ id }) => !interactionIds.has(id)).map(({ markup }) => markup).join("\n");
 const interaction = groups.filter(({ id }) => interactionIds.has(id)).map(({ markup }) => markup).join("\n");
-if (!base || !interaction) throw new Error("Could not split the existing FrankCards figure into base and interaction layers.");
+if (!base || !interaction) throw new Error("Could not split the existing Frankie Cards figure into base and interaction layers.");
 
 await mkdir(outputDirectory, { recursive: true });
 await Promise.all([
@@ -72,7 +72,7 @@ await Promise.all([
   writeFile(resolve(outputDirectory, "02-conversation-card.svg"), `${svgOpen}\n  <g transform="rotate(-11 466 646)">\n    <rect x="210" y="484" width="512" height="324" rx="48" fill="#9ab1cc"/>\n  </g>\n  <g transform="rotate(8 570 650)">\n    <rect x="312" y="498" width="512" height="324" rx="48" fill="#fdfdf9"/>\n  </g>\n${svgClose}`),
   writeFile(resolve(outputDirectory, "03-female.svg"), `${svgOpen}\n  ${figureOpening}\n${base}\n  </g>\n${svgClose}`),
   writeFile(resolve(outputDirectory, "04-hands-and-coffee.svg"), `${svgOpen}\n  ${figureOpening}\n${interaction}\n  </g>\n${svgClose}`),
-  writeFile(resolve(outputDirectory, "README.md"), `# FrankCards Icon Composer layers\n\nImport the SVGs in numerical order into Icon Composer. They use the actual FrankCards female figure and product card language.\n\n1. \`01-background.svg\` — full-bleed product background\n2. \`02-conversation-card.svg\` — two overlapping existing-style conversation cards in the app's pale blue and ivory\n3. \`03-female.svg\` — existing olive-cardigan character, without hands or coffee\n4. \`04-hands-and-coffee.svg\` — existing hands and coffee cup, for the foreground glass layer\n\nKeep the background opaque. In Icon Composer, use modest Liquid Glass on layers 2 and 4; keep the character layer mostly opaque for visual fidelity.\n`),
+  writeFile(resolve(outputDirectory, "README.md"), `# Frankie Cards Icon Composer layers\n\nImport the SVGs in numerical order into Icon Composer. They use the actual Frankie Cards female figure and product card language.\n\n1. \`01-background.svg\` — full-bleed product background\n2. \`02-conversation-card.svg\` — two overlapping existing-style conversation cards in the app's pale blue and ivory\n3. \`03-female.svg\` — existing olive-cardigan character, without hands or coffee\n4. \`04-hands-and-coffee.svg\` — existing hands and coffee cup, for the foreground glass layer\n\nKeep the background opaque. In Icon Composer, use modest Liquid Glass on layers 2 and 4; keep the character layer mostly opaque for visual fidelity.\n`),
 ]);
 
-console.log(`Exported ${groups.length} existing FrankCards figure groups to ${outputDirectory}.`);
+console.log(`Exported ${groups.length} existing Frankie Cards figure groups to ${outputDirectory}.`);

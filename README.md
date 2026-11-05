@@ -1,8 +1,8 @@
-# FrankCards
+# Frankie Cards
 
 <div align="center">
 
-<img src="public/icon.png" width="112" alt="FrankCards 图标" />
+<img src="public/icon.png" width="112" alt="Frankie Cards 图标" />
 
 ### Frankly Talking.
 
@@ -12,9 +12,9 @@
 
 </div>
 
-![FrankCards 首页：从不同的对话包中选择此刻想聊的话题](docs/images/readme/home.jpg)
+![Frankie Cards 首页：从不同的对话包中选择此刻想聊的话题](docs/images/readme/home.jpg)
 
-FrankCards 把不容易开口的问题放进一场有节奏的卡牌体验里。选一个适合此刻的对话包，把屏幕放在彼此中间，然后从第一张卡开始。这里没有标准答案、分数或关系诊断，真正重要的是接下来发生的对话。
+Frankie Cards 把不容易开口的问题放进一场有节奏的卡牌体验里。选一个适合此刻的对话包，把屏幕放在彼此中间，然后从第一张卡开始。这里没有标准答案、分数或关系诊断，真正重要的是接下来发生的对话。
 
 ## What makes it different
 
@@ -23,16 +23,16 @@ FrankCards 把不容易开口的问题放进一场有节奏的卡牌体验里。
 - **不被固定题库限制**：22 组中英文内置卡包覆盖伴侣、朋友、家庭、自我探索与不同场景，也可以筛选并组合成属于这一晚的一组牌。
 - **直接在真实卡片上创作**：修改封面、问题、背面提示、分类和颜色时，看到的就是最终使用的样子，而不是一张复杂的配置表单。
 
-![FrankCards 自定义模式：筛选并组合不同的对话包](docs/images/readme/custom-mode.jpg)
+![Frankie Cards 自定义模式：筛选并组合不同的对话包](docs/images/readme/custom-mode.jpg)
 
 ## 创建自己的对话包
 
-内置卡包无需登录。登录后可以创建私人卡包，保存后继续编辑或立即使用。想公开分享时，可以提交审核；通过的作品只会出现在自定义模式的**社区**中，不会混入 FrankCards 官方内容。已发布卡包仍可修改，更新后会重新进入审核。
+内置卡包无需登录。登录后可以创建私人卡包，保存后继续编辑或立即使用。想公开分享时，可以提交审核；通过的作品只会出现在自定义模式的**社区**中，不会混入 Frankie Cards 官方内容。已发布卡包仍可修改，更新后会重新进入审核。
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/readme/conversation.jpg" alt="FrankCards 对话卡片界面" /></td>
-    <td width="50%"><img src="docs/images/readme/topic-studio.jpg" alt="FrankCards 所见即所得话题编辑器" /></td>
+    <td width="50%"><img src="docs/images/readme/conversation.jpg" alt="Frankie Cards 对话卡片界面" /></td>
+    <td width="50%"><img src="docs/images/readme/topic-studio.jpg" alt="Frankie Cards 所见即所得话题编辑器" /></td>
   </tr>
   <tr>
     <td align="center"><sub>一次只让一个问题留在中间。</sub></td>
@@ -42,7 +42,7 @@ FrankCards 把不容易开口的问题放进一场有节奏的卡牌体验里。
 
 ## 使用方式
 
-FrankCards 目前提供网页端体验；iOS 版本将通过 App Store 发布。GitHub 用于维护源码与开发协作，不再提供桌面安装包下载。
+Frankie Cards 目前提供网页端体验；iOS 版本将通过 App Store 发布。GitHub 用于维护源码与开发协作，不再提供桌面安装包下载。
 
 <details>
 <summary><strong>本地运行与参与开发</strong></summary>
@@ -50,8 +50,8 @@ FrankCards 目前提供网页端体验；iOS 版本将通过 App Store 发布。
 需要 Node.js 20+ 与 npm：
 
 ```bash
-git clone https://github.com/SonghaiFan/frank_cards.git
-cd frank_cards
+git clone https://github.com/SonghaiFan/frankie-cards.git
+cd frankie-cards
 npm ci
 npm run dev
 ```
