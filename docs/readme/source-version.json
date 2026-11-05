@@ -1,0 +1,15 @@
+{
+  "repository": "frankie-cards",
+  "source_commit": "d271492b18e5bdab940519fde021950ba2d23b97",
+  "captured_on": "2026-11-05",
+  "source_state": "Current local working tree; existing uncommitted app edits were included where present.",
+  "materials": [
+    {
+      "file": "assets/ui.png",
+      "kind": "current local app screenshot",
+      "note": "Current guest home screen with built-in conversation packs.",
+      "captured_on": "2026-11-05"
+    }
+  ],
+  "icon": "assets/icon.png"
+}
