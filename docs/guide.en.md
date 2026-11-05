@@ -1,6 +1,6 @@
 # Frankie Cards / Project guide
 
-[← README](../public/README-EN.md)
+[← README](../README.md)
 
 Complete setup, behavior and technical notes. Unless stated otherwise, run commands from the repository root.
 
