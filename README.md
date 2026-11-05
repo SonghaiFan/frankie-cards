@@ -1,75 +1,42 @@
-![Frankie Cards — current product banner](docs/readme/banner.png)
+![Frankie Cards](docs/readme/banner.png)
 
 # Frankie Cards
 
 把难开口的话，变成可以一起翻开的卡片。为伴侣、朋友、家人，以及刚刚认识的人准备。
 
-[在线使用](https://frank-cards.vercel.app/) · [English](public/README-EN.md)
+[在线使用](https://frank-cards.vercel.app/) · [English](public/README-EN.md) · [Guide](docs/guide.md) · [Run locally](#run-locally)
 
-## Features
+## What it does
 
-- **一副牌是一场完整对话**：每个对话包都有自己的开场、分类、正反面提示和结束方式，让聊天自然地从轻松走向深入。
-- **问题有不同的能量**：圆润的 **Bouba** 帮助人慢慢打开，尖锐的 **Kiki** 用来穿过客套和假装。
-- **不被固定题库限制**：22 组中英文内置卡包覆盖伴侣、朋友、家庭、自我探索与不同场景，也可以筛选并组合成属于这一晚的一组牌。
-- **直接在真实卡片上创作**：修改封面、问题、背面提示、分类和颜色时，看到的就是最终使用的样子，而不是一张复杂的配置表单。
+- 选一个对话包，让问题自然地从轻松走向深入。
+- 用 Bouba 和 Kiki 两种问题能量，找到适合此刻的聊天方式。
+- 筛选、组合卡包，或直接在真实卡片上创作自己的问题。
 
-## Getting started
+## Run locally
 
-需要 Node.js 20+ 与 npm：
+需要 Node.js 20+ 与 npm。
 
 ```sh
 npm ci
 npm run dev
 ```
 
-打开 Vite 输出的本地地址。账号和用户话题的 Supabase 配置见 [Supabase 说明](supabase/README.md)。
+打开 Vite 输出的本地地址。账户与用户话题的配置见 [Supabase 说明](supabase/README.md)。
 
-## Project notes
+## Before you start
 
-Frankie Cards 把不容易开口的问题放进一场有节奏的卡牌体验里。选一个适合此刻的对话包，把屏幕放在彼此中间，然后从第一张卡开始。这里没有标准答案、分数或关系诊断，真正重要的是接下来发生的对话。
+内置卡包无需登录。登录后可以创建私人卡包；公开分享需要提交审核。社区作品与官方内容分开呈现，修改已发布卡包后会重新进入审核。
 
-### 创建自己的对话包
-
-内置卡包无需登录。登录后可以创建私人卡包，保存后继续编辑或立即使用。想公开分享时，可以提交审核；通过的作品只会出现在自定义模式的**社区**中，不会混入 Frankie Cards 官方内容。已发布卡包仍可修改，更新后会重新进入审核。
-
-### 使用方式
-
-Frankie Cards 目前提供网页端体验；iOS 版本将通过 App Store 发布。GitHub 用于维护源码与开发协作，不再提供桌面安装包下载。
-
-<details>
-<summary><strong>本地运行与参与开发</strong></summary>
-
-需要 Node.js 20+ 与 npm：
-
-```bash
-git clone https://github.com/SonghaiFan/frankie-cards.git
-cd frankie-cards
-npm ci
-npm run dev
-```
-
-桌面端使用 Tauri 2。安装 Rust 与 Tauri prerequisites 后运行：
-
-```bash
-npm run tauri dev
-```
-
-账号与用户话题由 Supabase 提供，配置见 [Supabase 说明](supabase/README.md)。项目使用 React、TypeScript、Vite、Supabase 与 Tauri，并以 [MIT License](LICENSE) 开源。参与前请阅读 [贡献指南](CONTRIBUTING_GUIDE.md)。
-
-</details>
-
-<div align="center">
-
-**Made for conversations that matter.**
-
-</div>
-
-## Development
+## For developers
 
 ```sh
 npm run build
 ```
 
-原生开发与协作见 [开发说明](DEV-README.md) 和 [贡献指南](CONTRIBUTING_GUIDE.md)。
+原生开发见 [开发说明](DEV-README.md)，参与协作前请阅读 [贡献指南](CONTRIBUTING_GUIDE.md)。
 
-Banner sources and update instructions: [README artwork](docs/readme/README.md).
+[Project guide](docs/guide.md) · [Artwork](docs/readme/README.md)
+
+---
+
+Made by [Songhai Fan](https://github.com/SonghaiFan) · A Frankie project · [License](LICENSE)
