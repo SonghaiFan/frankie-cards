@@ -2,9 +2,11 @@
 
 # Frankie Cards
 
+[English](README.md) · [简体中文](README.zh-CN.md)
+
 Turn hard-to-start conversations into cards you can open together—for partners, friends, families, and people who have only just met.
 
-[Use online](https://frank-cards.vercel.app/) · [Guide](docs/guide.en.md) · [Run locally](#run-locally) · [中文](README.zh-CN.md)
+[Use online](https://frank-cards.vercel.app/) · [Guide](docs/guide.en.md) · [Run locally](#run-locally)
 
 ## What it does
 
