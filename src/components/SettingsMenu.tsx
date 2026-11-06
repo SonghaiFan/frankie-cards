@@ -131,6 +131,7 @@ export default function SettingsMenu({ isLanguageSwitching, onChangeLanguage }: 
                 <span />
               </span>
             </label>
+            <div style={{ textAlign: "center", opacity: 0.65 }}><a href="https://songhaifan.github.io/frankie-cards/" aria-label="About Frankie cards" style={{ display: "inline-flex", alignItems: "center", padding: "6px", color: "inherit",  }}><span aria-hidden="true" style={{ display: "block", width: 76, height: 26, backgroundColor: "currentColor", mask: "url(/frankie-signature.svg) center / contain no-repeat", WebkitMask: "url(/frankie-signature.svg) center / contain no-repeat" }} /></a></div>
           </motion.section>
         ) : null}
       </AnimatePresence>
