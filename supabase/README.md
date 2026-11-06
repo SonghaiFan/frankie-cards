@@ -41,7 +41,7 @@ Database migrations do not upload hosted Auth email templates. In the Supabase D
 - **Reset password**: subject `Reset your Frankie Cards password`; paste `supabase/templates/recovery.html`.
 - **Magic link**: subject `Your Frankie Cards sign-in link`; paste `supabase/templates/magic_link.html` if magic-link login is enabled later.
 
-Save each template separately. The HTML uses Supabase's `{{ .ConfirmationURL }}` variable, includes a plain fallback link, and carries the Frankie Cards signature. The handwritten wordmark is served as a PNG from the public GitHub repository through jsDelivr for broad email-client support, so push `public/frank-signature-email.png` before testing the hosted templates. The matching entries in `supabase/config.toml` apply to the local Supabase stack after restarting it with `supabase stop && supabase start`.
+Save each template separately. The HTML uses Supabase's `{{ .ConfirmationURL }}` variable, includes a plain fallback link, and carries the Frankie Cards signature. The approved Frankie wordmark is served as a PNG at `https://frank-cards.vercel.app/frankie-signature-email.png` for broad email-client support. Deploy that public asset before testing the hosted templates. Existing hosted provider templates must be synced separately; updating these source files does not deploy Supabase settings or send email. The matching entries in `supabase/config.toml` apply to the local Supabase stack after restarting it with `supabase stop && supabase start`.
 
 ## Account deletion Edge Function
 

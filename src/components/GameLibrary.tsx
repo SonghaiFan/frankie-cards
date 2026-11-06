@@ -829,8 +829,8 @@ const QuickGameLibrary: React.FC<QuickGameLibraryProps> = ({
                     aria-label="Frankie Cards"
                     transition={{ layout: { duration: reducedMotion ? 0 : 0.92, ease: deceleratingEase } }}
                   >
-                    <span className="sr-only">Frank</span>
-                    <span aria-hidden="true" className="frank-signature" />
+                    <span className="sr-only">Frankie </span>
+                    <span aria-hidden="true" className="frankie-signature" />
                     <span>Cards</span>
                   </motion.h1>
                   <p>{t("gameLibrary.loadingBody")}</p>

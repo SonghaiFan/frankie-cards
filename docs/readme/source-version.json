@@ -1,14 +1,14 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "d271492b18e5bdab940519fde021950ba2d23b97",
-  "captured_on": "2026-11-05",
-  "source_state": "Current local working tree; existing uncommitted app edits were included where present.",
+  "source_commit": "5fd55cc675f9ed22528af621371260dc79ac8ad1",
+  "captured_on": "2026-11-06",
+  "source_state": "Local working tree at source_commit with the explicit Frankie branding update; no unrelated app changes.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Current guest home screen with built-in conversation packs.",
-      "captured_on": "2026-11-05"
+      "note": "Guest home with approved Frankie signature. Icon generated from the existing vector figure and approved Frankie signature.",
+      "captured_on": "2026-11-06"
     }
   ],
   "icon": "assets/icon.png"

@@ -4,7 +4,7 @@ type ExternalPage = "marketing" | "privacy" | "support";
 
 const Brand = () => (
   <a className="site-brand" href="/" aria-label="Frankie Cards home">
-    <img src="/frank-signature.svg" alt="Frank" width="78" height="33" />
+    <img src="/frankie-signature.svg" alt="Frankie" width="96" height="33" />
     <strong>Cards</strong>
   </a>
 );
@@ -33,7 +33,7 @@ function MarketingPage() {
       <main>
         <section className="marketing-hero" aria-labelledby="marketing-title">
           <div className="marketing-copy">
-            <h1 id="marketing-title">Frankly Talking.</h1>
+            <h1 id="marketing-title">Frankie Cards. Talk together.</h1>
             <p>Use the phone in your hand—or place it between you and use it like a physical card pack. Frankie Cards guides a face-to-face conversation from the first question to a meaningful close.</p>
             <div className="marketing-actions">
               <a className="button" href="/">Open Frankie Cards</a>
