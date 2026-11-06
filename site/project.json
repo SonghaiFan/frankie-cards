@@ -1,0 +1,74 @@
+{
+  "repository": "SonghaiFan/frankie-cards",
+  "branch": "main",
+  "pages_url": "https://songhaifan.github.io/frankie-cards/",
+  "kind": "online",
+  "app_url": "https://frank-cards.vercel.app",
+  "vercel_project": "frank-cards",
+  "accent": "#bd493d",
+  "tint": "#faf6ed",
+  "category": {
+    "en": "Conversation / Together",
+    "zh": "对话 / 一起"
+  },
+  "steps": {
+    "en": [
+      "Choose who you are talking with and a question pack.",
+      "Open a card and take turns answering.",
+      "Adjust the selection or create a private pack after signing in."
+    ],
+    "zh": [
+      "选择对话对象和问题包。",
+      "翻开卡片，轮流回答。",
+      "调整筛选，或登录后创建私人卡包。"
+    ]
+  },
+  "media": [
+    {
+      "src": "docs/readme/assets/ui.png",
+      "caption": {
+        "en": "Current product interface and original assets.",
+        "zh": "项目真实界面或原始素材。"
+      },
+      "crop": [
+        224,
+        24,
+        1410,
+        1150
+      ],
+      "source_size": [
+        1720,
+        1223
+      ]
+    },
+    {
+      "src": "site/assets/question.png",
+      "caption": {
+        "en": "A built-in question in guest mode.",
+        "zh": "访客模式下的内置问题。"
+      },
+      "captured_on": "2026-11-06"
+    },
+    {
+      "src": "site/assets/card-back.png",
+      "caption": {
+        "en": "Card navigation and the reverse side.",
+        "zh": "卡片导航与背面。"
+      },
+      "captured_on": "2026-11-06"
+    },
+    {
+      "src": "site/assets/demo.gif",
+      "caption": {
+        "en": "Recorded navigation through the conversation cards.",
+        "zh": "实际录制的对话卡片导航。"
+      },
+      "captured_on": "2026-11-06",
+      "note": "Actual app frames; compressed and retimed for a short demonstration, not a performance measurement."
+    }
+  ],
+  "art_note": {
+    "en": "Current product interface and original assets.",
+    "zh": "素材来自项目当前界面与原始资源。"
+  }
+}

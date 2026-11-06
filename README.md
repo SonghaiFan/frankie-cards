@@ -6,7 +6,7 @@
 
 Turn hard-to-start conversations into cards you can open together—for partners, friends, families, and people who have only just met.
 
-[Use online](https://frank-cards.vercel.app/) · [Guide](docs/guide.en.md) · [Run locally](#run-locally)
+[Introduction](https://songhaifan.github.io/frankie-cards/) · [Use online](https://frank-cards.vercel.app/) · [Guide](docs/guide.en.md) · [Run locally](#run-locally)
 
 ## What it does
 

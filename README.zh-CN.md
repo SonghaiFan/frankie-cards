@@ -6,7 +6,7 @@
 
 把难开口的话，变成可以一起翻开的卡片。为伴侣、朋友、家人，以及刚刚认识的人准备。
 
-[在线使用](https://frank-cards.vercel.app/) · [项目指南](docs/guide.md) · [本地运行](#本地运行)
+[介绍页](https://songhaifan.github.io/frankie-cards/zh/) · [在线使用](https://frank-cards.vercel.app/) · [项目指南](docs/guide.md) · [本地运行](#本地运行)
 
 ## 可以做什么
 

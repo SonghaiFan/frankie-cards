@@ -225,3 +225,6 @@ WixTools/
 *.pem
 apple-developer-certificate.p12
 .vercel
+
+# Standalone introduction build
+/_site/
