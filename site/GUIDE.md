@@ -1,49 +1,59 @@
-# Introduction page maintenance / 介绍页维护
+# Cards introduction maintenance / 介绍页维护
 
-[English README](../README.md) · [中文 README](../README.zh-CN.md)
+The introduction is a standalone static build at https://songhaifan.github.io/frankie-cards/. The app remains at https://frank-cards.vercel.app. English is the root; Chinese is `zh/`. This build does not load environment files, authenticate users, or call a model.
 
-## Two destinations / 两个入口
+介绍页独立构建。英文为默认入口，中文位于 `zh/`；构建不读取密钥，不登录账号，也不调用模型。
 
-- Introduction / 介绍页: https://songhaifan.github.io/frankie-cards/
-- App / 应用: https://frank-cards.vercel.app
-- The introduction is a standalone static site. It never builds the app or reads environment files. / 介绍页独立构建，不构建应用，也不读取环境变量文件。
-- English is the default; `zh/` is the Chinese version. / 英文默认，中文位于 `zh/`。
+## Content and live-data preview / 内容与真实数据预览
 
-## Files to update / 更新哪些文件
+- `site/content.json`: maintain English and Chinese explanations together. The page does not infer its content by parsing README sections. / 双语说明独立维护，不再从 README 的位置推断内容。
+- `site/build.py`: renders the shared overview → feature/concept → usage → gallery → setup structure and copies approved assets. `project.json` supplies repository, Pages URL and app URL; legacy `media`/`steps` keys are not used by this renderer. / 构建器使用项目配置中的仓库与链接；旧媒体列表与步骤字段不再控制页面。
+- The small question explorer reads `public/games/en/confidence-boost.json` and `public/games/zh/confidence-boost-CN.json` at every build. It uses all non-ending questions and their actual `energy` values. Changes to those packs require only rebuilding. Changing the sample pack requires updating the two paths in `build.py` and the bilingual preview title. / 示例直接读取真实内置卡包，卡包问题更新后重新构建即可。
+- `site/demo.js` is a lightweight question navigator, not the full React session. It stores no answers or preferences. Keep this distinction in the copy. / 示例不是完整游戏，不保存回答或偏好。
 
-| Source / 来源 | What it shows / 内容 |
-| --- | --- |
-| `docs/readme/assets/ui.png` | Current product interface and original assets. |
-| `site/assets/question.png` | A built-in question in guest mode. |
-| `site/assets/card-back.png` | Card navigation and the reverse side. |
-| `site/assets/demo.gif` | Recorded navigation through the conversation cards. |
+## Screenshot replacement map / 截图替换表
 
-- `../README.md` and `../README.zh-CN.md`: product introduction, features, setup, limitations and developer commands. Update both languages together. / 同步维护双语介绍、功能、运行步骤与限制。
-- `project.json`: app URL, repository, category, colors, three user steps and the ordered media list. / 应用链接、仓库、分类、颜色、使用步骤与有序素材列表。
-- `style.css`: this app's visual treatment within the shared layout. / 统一结构下的项目视觉风格。
-- `build.py`: portable standard-library renderer. / 可独立使用的 Python 标准库构建器。
+| Source file | Replace when | Actual app source |
+| --- | --- | --- |
+| `site/assets/question-current.png` | Question card, category palette, navigation or energy mark changes | `GamePlay.tsx`, `QuestionCard.tsx`, `Card.tsx`, `utils/gameTheme.ts` |
+| `site/assets/library-current.png` | Guest library, pack cover or guest/account entry changes | `GameLibrary.tsx`, `App.tsx` |
+| `site/assets/settings-current.png` | Language/theme/alternate-reader settings change | `SettingsMenu.tsx`, `hooks/useAppPreferences.ts` |
+| `site/assets/demo.gif` | Actual card navigation changes | Record real settled guest interactions; the retained GIF is an earlier walkthrough and is labelled as such |
+| `public/card-energy-shapes.png` | Bouba/Kiki source marks change | `CardEnergyIcon.tsx`, `App.css` shape masks |
+| `docs/readme/banner.png` | Approved README banner is refreshed | Copied to `media/banner.png` for Open Graph |
+| `docs/readme/assets/frankie.svg` | Approved signature changes | Copied into header |
 
-## Replacing screenshots and GIFs / 替换截图和动图
+New captures were made on 2026-11-06 from guest mode. Use harmless built-in questions, never personal topics, email addresses, keys, or avatars. Wait for transitions to finish before recording. The hero uses a CSS crop of `question-current.png`; retain the full real capture. If the card moves, adjust `.hero-screen img` rather than redrawing the UI. Add new screenshots to the explicit copy/gallery list in `build.py`, with bilingual captions in `content.json`.
 
-1. Run the current app and capture real, settled UI. Use synthetic or guest data; hide credentials and private content. For GIFs, record a real interaction from start to finish, rather than animating a static screenshot. / 运行当前版本，使用访客或示例数据采集稳定画面；GIF 应录制真实操作，不把静态图伪装成操作录像。
-2. Replace the corresponding source file above when its screen changes. These banner assets are shared with the README; replacing them may update both the banner and this page. Keep `docs/readme/source-version.json` and banner provenance accurate. / 界面变化后替换对应文件；共享素材会同时影响 banner，需同步更新来源记录。
-3. For a new screen or GIF, add it under `site/assets/` and add an entry to `project.json` → `media` with `src`, bilingual `caption`, and optionally `captured_on` / `source_revision`. The first item is the hero; the full list is the gallery. Use a GIF's first frame as an informative resting frame, keep files small, and provide a still alternative. / 新素材放到 `site/assets/`，登记双语说明、采集时间和版本；第一项为主图，其余进入画廊。GIF 应有可读首帧并保留静态替代图。
-4. If app behavior changes, update both READMEs and both `steps` arrays. Native screenshots and shared family artwork must be labelled honestly. / 行为变化时同步更新双语 README 和使用步骤；区分原生截图与系列共享素材。
-5. Build and inspect desktop and mobile, in both languages. Check the app link and every image. / 构建后检查桌面、手机和两种语言，验证链接与所有图片。
+新截图必须来自稳定后的真实界面，使用内置卡包，不包含私人话题或账号信息。主图只做 CSS 裁切；卡片位置变化时调整裁切，不能重绘截图。
+
+## Behavior and visual changes / 行为与风格变化
+
+Recheck account gating in `App.tsx`, custom question ordering in `GameController.tsx`, and editor capabilities in `components/account/TopicStudioPlay.tsx`. Guest mode is quick single-pack play; mixing/editing/Community interaction needs an account. Ending cards remain last even with Chaos Shuffle. Extra notes can flip; not every card has a reverse side. Reading-side rotation is a mobile preference.
+
+行为变动时核对账号权限、排序与编辑器源码；不要把登录后的功能写成访客可用，也不要暗示每张卡都能翻面。
+
+`site/style.css` inherits paper tokens from `src/App.css` and the sample pack’s category orange. Match changes to the real app’s surfaces, shapes, typography and dark theme. The Bouba/Kiki paragraph links to the primary cross-language sound-symbolism paper; its application to question energy is an explicit design metaphor, not a relationship-outcome claim.
+
+## Build and verify / 构建与检查
 
 ```sh
 python3 site/build.py
 python3 -m http.server 8080 --directory _site --bind 127.0.0.1
+node --check site/demo.js
 ```
 
-Open http://127.0.0.1:8080/ and http://127.0.0.1:8080/zh/.
+Open `/` and `/zh/` at desktop and 390px width. Try Next question through every built-in prompt and verify it cycles; inspect all images after scrolling. Check light/dark modes, keyboard focus, no horizontal overflow, and all CTA links. English and Chinese source packs may use different wording; do not invent translations of app data in the renderer.
 
-## Publishing / 发布
+检查双语、桌面与手机、亮暗模式，以及问题切换、键盘焦点、图片与链接。
 
-Push the reviewed page changes to `main`. `.github/workflows/pages.yml` publishes only `_site/` to GitHub Pages. App deployment remains separate on Vercel for browser apps; API services and native/local apps retain their own runtime. Never include `.env` files or unrelated work in a page commit. / 推送审核后的页面改动到 `main`，工作流只发布 `_site/`；应用与 API 的部署分别管理，勿提交环境变量文件或其他未完成代码。
+## Publish / 发布
 
-If the branch or repository owner changes, update `project.json`, the workflow branch and README introduction links. / 分支或仓库所有者变化时，同步修改配置、工作流与介绍页链接。
+Commit only reviewed `site/` changes and push `main`; `.github/workflows/pages.yml` publishes `_site`. The question-source JSON paths are also watched so a pack update refreshes its introduction preview. App deployment is independent. Do not include `.env` files or unrelated changes. Existing privacy/support pages on the app are linked, not rewritten.
 
-## App signature / 应用签名
+只提交审核后的介绍页改动；应用部署保持独立，不包含密钥和其他未完成代码。隐私与帮助页只保留链接，不在本次重写。
 
-The app signature uses `public/frankie-signature.svg`, copied from the approved `docs/readme/assets/frankie.svg`. It links to this introduction page. / 应用签名使用已确认的系列 SVG，并链接到介绍页。
+
+## Shared public-page styling
+
+The introduction copies `public/frankcards-site.css` into the build as `brand.css`, sharing the Privacy, Support and Marketing pages’ palette, system type, background and public-page components. `site/style.css` adds the explanatory layout and real orange question-card preview. Update the shared file for brand-wide changes, then rebuild both languages. Existing policy text and routes are unchanged.

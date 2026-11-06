@@ -1,0 +1,162 @@
+{
+  "en": {
+    "headline": "A question between you.",
+    "intro": "Conversation cards for a shared table, a familiar friend, or a moment with yourself.",
+    "open": "Open Cards",
+    "try": "Try a question",
+    "nav": [
+      "The cards",
+      "How to play",
+      "Inside the app"
+    ],
+    "concept_title": "One card. Room for an answer.",
+    "concept": "Pick a pack for the people and moment in front of you. Read one question, listen to the answer, and move on when you are ready. The app guides the prompts; the conversation happens between you.",
+    "demo_title": "From the actual Confidence Boost pack",
+    "demo_note": "These questions come directly from the bundled app data. This small preview has no account, saved answers, or AI request.",
+    "next": "Next question",
+    "energy": [
+      "Open / Bouba",
+      "Pierce / Kiki"
+    ],
+    "energy_title": "Two shapes, two kinds of question.",
+    "energy_intro": "The rounded and pointed marks describe a question’s energy. They are not a score or a personality type.",
+    "energy_items": [
+      [
+        "Open / Bouba",
+        "Curiosity, detail, and story. An invitation to expand an answer."
+      ],
+      [
+        "Pierce / Kiki",
+        "A tension or contradiction. An invitation to look beyond a rehearsed answer."
+      ]
+    ],
+    "research": "The names borrow from the bouba/kiki sound-shape association: people often pair “bouba” with rounded shapes and “kiki” with pointed ones. <a href=\"https://doi.org/10.1098/rstb.2020.0390\">Ćwiek et al.’s cross-language study</a> examines that association. Using the shapes for conversation energy is this app’s design metaphor, not a tested relationship intervention.",
+    "features_title": "Choose the conversation you want.",
+    "features": [
+      [
+        "Start with a built-in pack",
+        "Guest mode opens a single pack straight into questions. Packs span self-reflection, friends, partners, family, and imagined situations. Change the language to change both interface and available packs."
+      ],
+      [
+        "Make a session your own",
+        "After signing in, Customize lets you combine packs, choose categories, and set the proportion of questions. Chaos Shuffle mixes non-ending questions across categories; ending cards stay at the close."
+      ],
+      [
+        "Write on the cards",
+        "My Topics opens a card-based editor for categories, questions, reverse-side notes, and closing cards. Personal topics stay private until submitted for Community review."
+      ]
+    ],
+    "workflow_title": "Put the phone between you.",
+    "steps": [
+      [
+        "Choose a pack",
+        "In guest mode, browse the library and open a pack that fits the moment."
+      ],
+      [
+        "Take turns",
+        "Use Previous and Next, or the left and right arrow keys. On touch devices, swipe horizontally. Cards with extra notes can flip."
+      ],
+      [
+        "Face the next reader",
+        "On mobile, Alternate card direction can rotate every other card toward the person across the table. Switch it in Settings."
+      ]
+    ],
+    "gallery_title": "The real app, in guest mode.",
+    "captions": [
+      "A built-in question from Confidence Boost.",
+      "The scrollable pack library in guest mode.",
+      "Language, appearance, and alternate card direction."
+    ],
+    "start_title": "Start without an account.",
+    "start": "Built-in quick play needs no sign-in. Accounts unlock Community interactions, pack mixing, and your own saved topics. Authentication, topics, and likes use Supabase when configured.",
+    "ai_title": "AI drafting is optional.",
+    "ai": "The topic editor can draft cards through a provider you choose. Your prompt and settings are sent to that provider; the key is used for that request and is not saved by Cards. The introduction preview never calls a model.",
+    "local": "Run locally",
+    "local_note": "The standalone introduction builds with Python only. The app uses Vite; backend features require the project’s documented Supabase configuration.",
+    "guide": "Asset & content update guide",
+    "source": "Source code",
+    "footer": "A Frankie project by Songhai Fan",
+    "privacy": "Privacy",
+    "support": "Support"
+  },
+  "zh": {
+    "headline": "把问题，放在你们之间。",
+    "intro": "为同桌的人、熟悉的朋友，或独处的片刻，翻开一张对话卡。",
+    "open": "打开 Cards",
+    "try": "试读一个问题",
+    "nav": [
+      "认识卡片",
+      "如何使用",
+      "真实界面"
+    ],
+    "concept_title": "一张卡片，留出回答的空间。",
+    "concept": "根据眼前的人和当下的情境选择卡包。读出一个问题，听听对方的回答，准备好后再进入下一张。应用提供提问的线索，对话仍发生在你们之间。",
+    "demo_title": "来自真实「自信加油站」卡包",
+    "demo_note": "问题直接读取项目内置数据。这是无账号、不保存回答、不会请求 AI 的小预览。",
+    "next": "下一个问题",
+    "energy": [
+      "展开 / Bouba",
+      "刺透 / Kiki"
+    ],
+    "energy_title": "两种形状，两种提问的力量。",
+    "energy_intro": "圆润与尖锐的标记描述问题的表达方式，不是评分，也不是人格分类。",
+    "energy_items": [
+      [
+        "展开 / Bouba",
+        "带着好奇、细节与故事，让回答自然展开。"
+      ],
+      [
+        "刺透 / Kiki",
+        "指出一种张力或矛盾，邀请你越过习惯性的回答。"
+      ]
+    ],
+    "research": "名称借用 bouba/kiki 的声音与形状联结：人们常把 bouba 与圆润形状、kiki 与尖锐形状配对。<a href=\"https://doi.org/10.1098/rstb.2020.0390\">Ćwiek 等人的跨语言研究</a>讨论了这一现象。把形状用于描述对话能量，是本应用的设计隐喻，并非经过验证的关系干预。",
+    "features_title": "选择适合此刻的对话。",
+    "features": [
+      [
+        "从内置卡包开始",
+        "访客打开单个卡包即可直接进入问题。主题涵盖自我回顾、朋友、伴侣、家庭与想象情境。切换语言会同时改变界面与可用卡包。"
+      ],
+      [
+        "组合自己的场次",
+        "登录后进入自定义模式，可混合卡包、筛选分类并调整抽取比例。混沌洗牌会打散非结束问题的分类顺序，结束卡仍放在最后。"
+      ],
+      [
+        "直接在卡片上写作",
+        "「我的话题」提供卡片式编辑器，可编写分类、问题、背面说明与结束卡。个人话题默认私有，提交社区后需经审核才能公开。"
+      ]
+    ],
+    "workflow_title": "把手机放在你们中间。",
+    "steps": [
+      [
+        "选一个卡包",
+        "在访客模式浏览卡包，打开适合此刻的主题。"
+      ],
+      [
+        "轮流回答",
+        "使用上一张、下一张，或键盘左右方向键。触屏可横向滑动；带补充说明的卡片可以翻面。"
+      ],
+      [
+        "面向下一位读者",
+        "手机上可在设置中开启「交替卡片方向」，让每隔一张的卡片转向桌子对面的人。"
+      ]
+    ],
+    "gallery_title": "访客模式下的真实应用。",
+    "captions": [
+      "「自信加油站」中的内置问题。",
+      "可滚动浏览的访客卡包库。",
+      "语言、外观与交替卡片方向设置。"
+    ],
+    "start_title": "无需账号即可开始。",
+    "start": "内置卡包的快速体验不需要登录。账号用于社区互动、混合卡包与保存个人话题。配置后，认证、话题与点赞由 Supabase 提供服务。",
+    "ai_title": "AI 草拟是可选的。",
+    "ai": "话题编辑器可通过你选择的模型服务草拟卡片。提示词与设置会发送给该服务；密钥仅用于请求，Cards 不会保存。本介绍页的预览不会调用模型。",
+    "local": "本地运行",
+    "local_note": "介绍页仅需 Python 独立构建。应用使用 Vite；后端功能需要按项目文档配置 Supabase。",
+    "guide": "素材与内容更新指南",
+    "source": "源代码",
+    "footer": "Songhai Fan 的 Frankie 系列项目",
+    "privacy": "隐私政策",
+    "support": "帮助"
+  }
+}
