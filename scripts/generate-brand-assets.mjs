@@ -29,6 +29,7 @@ try {
   for (const name of ["public/frankie-cards-logo.svg", "public/card-icon.svg"]) {
     await writeFile(resolve(root, name), logo);
   }
+  await writeFile(resolve(root, "public/frankie-cards-symbol.svg"), logo.replace('viewBox="0 0 256 256"', 'viewBox="28 43 202 166"'));
   // The original handwritten wordmark is independent of the double-card icon.
   const signature = await readFile(resolve(root, "docs/readme/assets/frankie.svg"));
   for (const name of ["public/frankie-signature.svg", "public/frank-signature.svg"]) {

@@ -7,16 +7,29 @@
       "name": "Bouba / character blue front card",
       "layers": [
         {
+          "image-name": "03-bouba-symbol.svg",
+          "name": "03-bouba-symbol",
+          "glass": false
+        },
+        {
           "image-name": "03-bouba-card.svg",
           "name": "03-bouba-card",
-          "glass": false
+          "glass": true,
+          "fill": {
+            "linear-gradient": [
+              "srgb:0.717647,0.803922,0.886275,1.000000",
+              "srgb:0.603922,0.694118,0.800000,1.000000"
+            ]
+          }
         }
       ],
+      "lighting": "combined",
+      "blur-material": 0,
       "shadow": {
-        "kind": "none",
-        "opacity": 0
+        "kind": "neutral",
+        "opacity": 0.35
       },
-      "specular": false,
+      "specular": true,
       "translucency": {
         "enabled": false,
         "value": 0
@@ -26,16 +39,29 @@
       "name": "Kiki / character green rear card",
       "layers": [
         {
+          "image-name": "02-kiki-symbol.svg",
+          "name": "02-kiki-symbol",
+          "glass": false
+        },
+        {
           "image-name": "02-kiki-card.svg",
           "name": "02-kiki-card",
-          "glass": false
+          "glass": true,
+          "fill": {
+            "linear-gradient": [
+              "srgb:0.705882,0.737255,0.600000,1.000000",
+              "srgb:0.611765,0.635294,0.513725,1.000000"
+            ]
+          }
         }
       ],
+      "lighting": "combined",
+      "blur-material": 0,
       "shadow": {
-        "kind": "none",
-        "opacity": 0
+        "kind": "neutral",
+        "opacity": 0.35
       },
-      "specular": false,
+      "specular": true,
       "translucency": {
         "enabled": false,
         "value": 0

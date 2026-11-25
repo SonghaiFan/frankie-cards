@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../auth/AuthProvider";
+import FrankieBrand from "./FrankieBrand";
 
 
 interface GameIntroPanelProps {
@@ -48,12 +49,7 @@ const GameIntroPanel: React.FC<GameIntroPanelProps> = ({
           transition={{ layout: { duration: reducedMotion ? 0 : 0.82, ease: languageLayoutEase } }}
           aria-label="Frankie Cards"
         >
-          <img className="frankie-brand-mark" src="/frankie-cards-logo.svg" alt="" width="256" height="256" />
-          <span className="frankie-brand-name">
-            <span className="sr-only">Frankie </span>
-            <span aria-hidden="true" className="frankie-signature" />
-            <span>Cards</span>
-          </span>
+          <FrankieBrand />
         </motion.h1>
       </motion.div>
       <motion.div

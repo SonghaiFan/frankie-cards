@@ -1565,7 +1565,7 @@ body {
   line-height: 1;
 }
 
-.library-loading-brand .frankie-brand-name {
+.library-loading-brand .frankie-brand-lockup {
   font-size: 0.7em;
 }
 
@@ -1871,13 +1871,11 @@ body {
 }
 
 .frankie-brand-mark {
-  display: inline-block;
-  width: 2.15em;
-  height: 2.15em;
-  max-width: 100%;
+  display: block;
+  flex-shrink: 0;
+  width: 2.12em;
+  height: 1.74em;
   object-fit: contain;
-  vertical-align: middle;
-  border-radius: 22.22%;
 }
 
 .game-intro-brand h1 {
@@ -1887,18 +1885,30 @@ body {
   gap: 0.2em;
 }
 
-.frankie-brand-name {
-  display: inline-flex;
+.frankie-brand-lockup {
+  display: block;
+  width: 6.7em;
+  max-width: 100%;
+}
+
+.frankie-brand-row {
+  display: flex;
   align-items: center;
+  gap: 0.12em;
+  line-height: 1;
   white-space: nowrap;
 }
 
+.frankie-brand-cards {
+  font-size: 1.7em;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
 .frankie-signature {
-  display: inline-block;
-  flex-shrink: 0;
-  width: 3.65em;
-  height: 1.35em;
-  margin-right: 0.12em;
+  display: block;
+  width: 5.7em;
+  height: 1.94em;
   background: currentColor;
   -webkit-mask: url("/frankie-signature.svg?v=20261125-signature") center / contain no-repeat;
   mask: url("/frankie-signature.svg?v=20261125-signature") center / contain no-repeat;

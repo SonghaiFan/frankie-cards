@@ -1,13 +1,13 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "c31f3eff2ce2520c62ac0190b4d861136376de59",
+  "source_commit": "d36d39aa9edfde2f501b71bb5c2e76e7b9805602",
   "captured_on": "2026-11-25",
-  "source_state": "Local working tree at source_commit plus restoration of the original handwritten Frankie signature beside Cards.",
+  "source_state": "Local working tree at source_commit plus the reference-based lockup and top-right card symbols.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Guest landing page with blue/green double-card icon, original handwritten Frankie signature and Cards. The app-icon artwork remains unchanged.",
+      "note": "Real guest landing page, with reference-based arrangement of the original signature and vector assets.",
       "captured_on": "2026-11-25"
     }
   ],

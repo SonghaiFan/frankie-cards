@@ -21,26 +21,38 @@ for (const legacy of ["02-conversation-card.svg", "03-female.svg", "04-hands-and
   await rm(resolve(directory, legacy), { force: true });
 }
 const layers = [
-  ["02-kiki-card.svg", paths.slice(1, 3)],
-  ["03-bouba-card.svg", paths.slice(3, 5)],
+  ["02-kiki-card.svg", paths.slice(1, 2)],
+  ["02-kiki-symbol.svg", paths.slice(2, 3)],
+  ["03-bouba-card.svg", paths.slice(3, 4)],
+  ["03-bouba-symbol.svg", paths.slice(4, 5)],
 ];
 await writeFile(resolve(directory, "01-background.svg"), svg(paths.slice(0, 1)));
 for (const [name, artwork] of layers) {
   await writeFile(resolve(directory, name), svg(artwork));
   await writeFile(resolve(document, "Assets", name), svg(artwork));
 }
-// Preserve the approved flat artwork; the platform supplies its own enclosure.
+// Keep printed symbols crisp while the card surfaces receive native lighting.
 await writeFile(resolve(document, "icon.json"), JSON.stringify({
   fill: { solid: "srgb:1.000000,1.000000,1.000000,1.000000" },
   // Composer stores the topmost group first, unlike SVG paint order.
-  groups: layers.map(([name], index) => ({
+  groups: ["02-kiki", "03-bouba"].map((stem, index) => ({
     name: index === 0 ? "Kiki / character green rear card" : "Bouba / character blue front card",
-    layers: [{ "image-name": name, name: name.replace(/\.svg$/, ""), glass: false }],
-    shadow: { kind: "none", opacity: 0 },
-    specular: false,
+    layers: [
+      { "image-name": `${stem}-symbol.svg`, name: `${stem}-symbol`, glass: false },
+      {
+        "image-name": `${stem}-card.svg`, name: `${stem}-card`, glass: true,
+        fill: { "linear-gradient": index === 0
+          ? ["srgb:0.705882,0.737255,0.600000,1.000000", "srgb:0.611765,0.635294,0.513725,1.000000"]
+          : ["srgb:0.717647,0.803922,0.886275,1.000000", "srgb:0.603922,0.694118,0.800000,1.000000"] },
+      },
+    ],
+    lighting: "combined",
+    "blur-material": 0,
+    shadow: { kind: "neutral", opacity: 0.35 },
+    specular: true,
     translucency: { enabled: false, value: 0 },
   })).reverse(),
   "supported-platforms": { squares: "shared" },
 }, null, 2) + "\n");
-await writeFile(resolve(directory, "README.md"), `# Frankie Cards / character blue and green\n\nGenerated from \`../frankcards-app-icon.svg\`. Run \`npm run icons:composer\` after editing the master.\n\n- \`01-background.svg\`: opaque white icon canvas, #FFFFFF.\n- \`02-kiki-card.svg\`: original Kiki on the rear green card, #9CA283.\n- \`03-bouba-card.svg\`: original Bouba on the front blue card, #9AB1CC.\n\nCard colours come from the original FemaleFigure/MaleFigure clothing. The editable Icon Composer document is \`../AppIcon.icon\`. It uses an opaque solid background and two separate card groups. Glass effects are off to preserve the design. Do not redraw the original Bouba/Kiki paths or bake a rounded icon mask into any layer. The system supplies the icon enclosure. The web logo omits the white canvas.\n\nApple workflow: https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer\n`);
+await writeFile(resolve(directory, "README.md"), `# Frankie Cards / character blue and green\n\nGenerated from \`../frankcards-app-icon.svg\`. Run \`npm run icons:composer\` after editing the master.\n\n- \`01-background.svg\`: opaque white icon canvas, #FFFFFF.\n- \`02-kiki-card.svg\` / \`02-kiki-symbol.svg\`: green rear card and original Kiki at its top right.\n- \`03-bouba-card.svg\` / \`03-bouba-symbol.svg\`: blue front card and original Bouba at its top right.\n\nCard colours come from the original FemaleFigure/MaleFigure clothing. The editable Icon Composer document is \`../AppIcon.icon\`. Card surfaces have native specular lighting, a neutral shadow (0.35), and a light-to-base gradient; symbols have glass disabled, and card translucency is disabled. The original paths are preserved and transformed only. Do not bake a rounded enclosure into the layers. The web logo is flat and transparent; the cropped \`public/frankie-cards-symbol.svg\` is used beside lowercase cards beneath the original signature.\n\nApple workflow: https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer\n`);
 console.log(`Updated character-colour layers and ${document}.`);

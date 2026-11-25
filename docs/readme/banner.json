@@ -10,12 +10,12 @@
       "crop": [
         0,
         0,
-        1468,
-        1247
+        1720,
+        1224
       ],
       "source_size": [
-        1468,
-        1247
+        1720,
+        1224
       ]
     }
   ],
@@ -25,7 +25,7 @@
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Current guest landing page with the blue/green icon, original handwritten Frankie signature and Cards.",
+      "note": "Current guest landing page: original signature above lowercase cards, double-card symbol to the right, original symbols at the top-right corners.",
       "captured_on": "2026-11-25"
     }
   ]
