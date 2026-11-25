@@ -15,6 +15,8 @@ The canonical master is `src-tauri/icons/frankcards-app-icon.svg` (256 × 256 vi
 
 Blue comes from `MaleFigure.tsx`'s default clothing colour; green comes from `FemaleFigure.tsx`. `public/frankie-cards-logo.svg` omits the background and is used by the app header, loading states, settings and public-page headers. The PNG icons retain white, without transparency. Legacy signature/card-icon URLs are compatibility copies of the transparent artwork. Email PNGs and local template sources are updated together; no hosted provider configuration is changed by these files.
 
+The landing page and library loading state keep the visible **Frankie Cards** name beneath the logo. The symbol-only app icon does not replace that page heading.
+
 ## Regenerate assets
 
 ```sh

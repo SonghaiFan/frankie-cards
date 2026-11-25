@@ -1,13 +1,13 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "cbfce056c21881fa22cc76f8916fa1f5b78b184b",
+  "source_commit": "d9d7e5d277b5a52f6f83fbb57655bd650d8ab297",
   "captured_on": "2026-11-25",
-  "source_state": "Guest home captured from the local working tree at source_commit plus the double-card branding change, before committing that change.",
+  "source_state": "Local working tree at source_commit plus the change retaining the visible Frankie Cards name on the landing page.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Guest home with the transparent character-blue/green double-card logo. App icons use the same geometry on an opaque white canvas.",
+      "note": "Guest landing page with transparent blue/green logo and visible Frankie Cards heading. Icons retain the white canvas.",
       "captured_on": "2026-11-25"
     }
   ],
