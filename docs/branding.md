@@ -13,9 +13,9 @@ The canonical master is `src-tauri/icons/frankcards-app-icon.svg` (256 × 256 vi
 | Front Bouba card | `#9AB1CC` |
 | Rear Kiki card | `#9CA283` |
 
-Blue comes from `MaleFigure.tsx`'s default clothing colour; green comes from `FemaleFigure.tsx`. `public/frankie-cards-logo.svg` omits the background and is used by the app header, loading states, settings and public-page headers. The PNG icons retain white, without transparency. Legacy signature/card-icon URLs are compatibility copies of the transparent artwork. Email PNGs and local template sources are updated together; no hosted provider configuration is changed by these files.
+Blue comes from `MaleFigure.tsx`'s default clothing colour; green comes from `FemaleFigure.tsx`. `public/frankie-cards-logo.svg` omits the background and is used by the app header, loading states, settings and public-page headers. The PNG icons retain white, without transparency. The legacy `card-icon.svg` URL is a copy of the transparent double-card artwork. Email PNGs and local template sources are updated together; no hosted provider configuration is changed by these files.
 
-The landing page and library loading state keep the visible **Frankie Cards** name beneath the logo. The symbol-only app icon does not replace that page heading.
+The landing page and library loading state keep the original handwritten **Frankie** signature followed by **Cards** beneath the logo. The signature master is `docs/readme/assets/frankie.svg` (481 × 164 viewBox), restored unchanged from `cbfce05`. `public/frankie-signature.svg` and `public/frank-signature.svg` are copies of that signature. The icon generator must preserve this independent wordmark rather than overwrite it with double-card artwork.
 
 ## Regenerate assets
 

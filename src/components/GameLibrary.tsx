@@ -830,7 +830,11 @@ const QuickGameLibrary: React.FC<QuickGameLibraryProps> = ({
                     transition={{ layout: { duration: reducedMotion ? 0 : 0.92, ease: deceleratingEase } }}
                   >
                     <img className="frankie-brand-mark" src="/frankie-cards-logo.svg" alt="" width="256" height="256" />
-                    <span className="frankie-brand-name">Frankie Cards</span>
+                    <span className="frankie-brand-name">
+                      <span className="sr-only">Frankie </span>
+                      <span aria-hidden="true" className="frankie-signature" />
+                      <span>Cards</span>
+                    </span>
                   </motion.h1>
                   <p>{t("gameLibrary.loadingBody")}</p>
                 </motion.div>

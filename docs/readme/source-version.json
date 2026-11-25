@@ -1,13 +1,13 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "d9d7e5d277b5a52f6f83fbb57655bd650d8ab297",
+  "source_commit": "c31f3eff2ce2520c62ac0190b4d861136376de59",
   "captured_on": "2026-11-25",
-  "source_state": "Local working tree at source_commit plus the change retaining the visible Frankie Cards name on the landing page.",
+  "source_state": "Local working tree at source_commit plus restoration of the original handwritten Frankie signature beside Cards.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Guest landing page with transparent blue/green logo and visible Frankie Cards heading. Icons retain the white canvas.",
+      "note": "Guest landing page with blue/green double-card icon, original handwritten Frankie signature and Cards. The app-icon artwork remains unchanged.",
       "captured_on": "2026-11-25"
     }
   ],

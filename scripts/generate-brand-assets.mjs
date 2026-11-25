@@ -26,8 +26,13 @@ try {
   const artwork = await readFile(master, "utf8");
   // The app uses the same artwork without the white application-icon canvas.
   const logo = artwork.replace(/^[ \t]*<path\b[^>]*\/>[ \t]*\r?\n/m, "");
-  for (const name of ["public/frankie-cards-logo.svg", "public/card-icon.svg", "public/frankie-signature.svg", "public/frank-signature.svg", "docs/readme/assets/frankie.svg"]) {
+  for (const name of ["public/frankie-cards-logo.svg", "public/card-icon.svg"]) {
     await writeFile(resolve(root, name), logo);
+  }
+  // The original handwritten wordmark is independent of the double-card icon.
+  const signature = await readFile(resolve(root, "docs/readme/assets/frankie.svg"));
+  for (const name of ["public/frankie-signature.svg", "public/frank-signature.svg"]) {
+    await writeFile(resolve(root, name), signature);
   }
   run(["icon", master, "--output", resolve(root, "src-tauri/icons"), "--ios-color", "#FFFFFF"]);
   for (const name of ["public/frankie-signature-email.png", "public/frank-signature-email.png"]) {

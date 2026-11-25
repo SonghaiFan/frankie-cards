@@ -1888,7 +1888,20 @@ body {
 }
 
 .frankie-brand-name {
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
+}
+
+.frankie-signature {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 3.65em;
+  height: 1.35em;
+  margin-right: 0.12em;
+  background: currentColor;
+  -webkit-mask: url("/frankie-signature.svg?v=20261125-signature") center / contain no-repeat;
+  mask: url("/frankie-signature.svg?v=20261125-signature") center / contain no-repeat;
 }
 
 @media (min-width: 1024px) {

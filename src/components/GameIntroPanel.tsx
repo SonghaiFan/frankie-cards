@@ -49,7 +49,11 @@ const GameIntroPanel: React.FC<GameIntroPanelProps> = ({
           aria-label="Frankie Cards"
         >
           <img className="frankie-brand-mark" src="/frankie-cards-logo.svg" alt="" width="256" height="256" />
-          <span className="frankie-brand-name">Frankie Cards</span>
+          <span className="frankie-brand-name">
+            <span className="sr-only">Frankie </span>
+            <span aria-hidden="true" className="frankie-signature" />
+            <span>Cards</span>
+          </span>
         </motion.h1>
       </motion.div>
       <motion.div
