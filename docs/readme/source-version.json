@@ -1,14 +1,14 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "5fd55cc675f9ed22528af621371260dc79ac8ad1",
-  "captured_on": "2026-11-06",
-  "source_state": "Local working tree at source_commit with the explicit Frankie branding update; no unrelated app changes.",
+  "source_commit": "cbfce056c21881fa22cc76f8916fa1f5b78b184b",
+  "captured_on": "2026-11-25",
+  "source_state": "Guest home captured from the local working tree at source_commit plus the double-card branding change, before committing that change.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Guest home with approved Frankie signature. Icon generated from the existing vector figure and approved Frankie signature.",
-      "captured_on": "2026-11-06"
+      "note": "Guest home with the transparent character-blue/green double-card logo. App icons use the same geometry on an opaque white canvas.",
+      "captured_on": "2026-11-25"
     }
   ],
   "icon": "assets/icon.png"

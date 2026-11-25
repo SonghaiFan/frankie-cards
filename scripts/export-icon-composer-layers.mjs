@@ -1,78 +1,46 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 
-const scriptDirectory = dirname(fileURLToPath(import.meta.url));
-const projectRoot = resolve(scriptDirectory, "..");
-const source = resolve(projectRoot, "src-tauri/icons/frankcards-app-icon.svg");
-const outputDirectory = resolve(projectRoot, "src-tauri/icons/icon-composer");
-
-const svgOpen = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" viewBox="0 0 1024 1024">';
-const svgClose = "</svg>\n";
-const interactionIds = new Set(["right-hand", "left-hand", "coffe-cup", "coffe", "unnamed-base-detail"]);
-
-function matchingGroupEnd(markup, start) {
-  const tags = /<\/?g\b[^>]*>/g;
-  tags.lastIndex = start;
-  let depth = 0;
-
-  for (let match = tags.exec(markup); match; match = tags.exec(markup)) {
-    depth += match[0].startsWith("</") ? -1 : 1;
-    if (depth === 0) return tags.lastIndex;
-  }
-
-  throw new Error("Unable to find the end of the existing female figure.");
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const directory = resolve(root, "src-tauri/icons/icon-composer");
+const document = resolve(root, "src-tauri/icons/AppIcon.icon");
+const master = await readFile(resolve(root, "src-tauri/icons/frankcards-app-icon.svg"), "utf8");
+const paths = master.match(/<path\b[^>]*\/>/g);
+if (paths?.length !== 5 || !master.includes('viewBox="0 0 256 256"')) {
+  throw new Error("Expected the double-card master: background, Kiki card/mark, Bouba card/mark.");
 }
 
-function directGroups(innerMarkup) {
-  const tags = /<\/?g\b[^>]*>/g;
-  const groups = [];
-  let depth = 0;
-  let start = null;
-  let openingTag = "";
-
-  for (let match = tags.exec(innerMarkup); match; match = tags.exec(innerMarkup)) {
-    if (!match[0].startsWith("</")) {
-      if (depth === 0) {
-        start = match.index;
-        openingTag = match[0];
-      }
-      depth += 1;
-      continue;
-    }
-
-    depth -= 1;
-    if (depth === 0 && start !== null) {
-      const id = openingTag.match(/\bid="([^"]+)"/)?.[1] ?? "unnamed-base-detail";
-      groups.push({ id, markup: innerMarkup.slice(start, tags.lastIndex) });
-      start = null;
-    }
-  }
-
-  return groups;
+function svg(artwork) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 256 256">\n${artwork.join("\n")}\n</svg>\n`;
 }
 
-const master = await readFile(source, "utf8");
-const figureStart = master.indexOf('<g id="female"');
-if (figureStart === -1) throw new Error("The Frankie Cards master icon has no female figure.");
-
-const openingEnd = master.indexOf(">", figureStart) + 1;
-const figureEnd = matchingGroupEnd(master, figureStart);
-const figureOpening = master.slice(figureStart, openingEnd);
-const figureInner = master.slice(openingEnd, figureEnd - 4);
-const groups = directGroups(figureInner);
-
-const base = groups.filter(({ id }) => !interactionIds.has(id)).map(({ markup }) => markup).join("\n");
-const interaction = groups.filter(({ id }) => interactionIds.has(id)).map(({ markup }) => markup).join("\n");
-if (!base || !interaction) throw new Error("Could not split the existing Frankie Cards figure into base and interaction layers.");
-
-await mkdir(outputDirectory, { recursive: true });
-await Promise.all([
-  writeFile(resolve(outputDirectory, "01-background.svg"), `${svgOpen}\n  <linearGradient id="frankcards-background" x1="92" y1="88" x2="932" y2="936" gradientUnits="userSpaceOnUse">\n    <stop stop-color="#f7f7f1"/>\n    <stop offset="0.54" stop-color="#e9eee9"/>\n    <stop offset="1" stop-color="#dce8ee"/>\n  </linearGradient>\n  <rect width="1024" height="1024" fill="url(#frankcards-background)"/>\n${svgClose}`),
-  writeFile(resolve(outputDirectory, "02-conversation-card.svg"), `${svgOpen}\n  <g transform="rotate(-11 466 646)">\n    <rect x="210" y="484" width="512" height="324" rx="48" fill="#9ab1cc"/>\n  </g>\n  <g transform="rotate(8 570 650)">\n    <rect x="312" y="498" width="512" height="324" rx="48" fill="#fdfdf9"/>\n  </g>\n${svgClose}`),
-  writeFile(resolve(outputDirectory, "03-female.svg"), `${svgOpen}\n  ${figureOpening}\n${base}\n  </g>\n${svgClose}`),
-  writeFile(resolve(outputDirectory, "04-hands-and-coffee.svg"), `${svgOpen}\n  ${figureOpening}\n${interaction}\n  </g>\n${svgClose}`),
-  writeFile(resolve(outputDirectory, "README.md"), `# Frankie Cards Icon Composer layers\n\nImport the SVGs in numerical order into Icon Composer. They use the actual Frankie Cards female figure and product card language.\n\n1. \`01-background.svg\` — full-bleed product background\n2. \`02-conversation-card.svg\` — two overlapping existing-style conversation cards in the app's pale blue and ivory\n3. \`03-female.svg\` — existing olive-cardigan character, without hands or coffee\n4. \`04-hands-and-coffee.svg\` — existing hands and coffee cup, for the foreground glass layer\n\nKeep the background opaque. In Icon Composer, use modest Liquid Glass on layers 2 and 4; keep the character layer mostly opaque for visual fidelity.\n`),
-]);
-
-console.log(`Exported ${groups.length} existing Frankie Cards figure groups to ${outputDirectory}.`);
+await mkdir(directory, { recursive: true });
+await mkdir(resolve(document, "Assets"), { recursive: true });
+for (const legacy of ["02-conversation-card.svg", "03-female.svg", "04-hands-and-coffee.svg"]) {
+  await rm(resolve(directory, legacy), { force: true });
+}
+const layers = [
+  ["02-kiki-card.svg", paths.slice(1, 3)],
+  ["03-bouba-card.svg", paths.slice(3, 5)],
+];
+await writeFile(resolve(directory, "01-background.svg"), svg(paths.slice(0, 1)));
+for (const [name, artwork] of layers) {
+  await writeFile(resolve(directory, name), svg(artwork));
+  await writeFile(resolve(document, "Assets", name), svg(artwork));
+}
+// Preserve the approved flat artwork; the platform supplies its own enclosure.
+await writeFile(resolve(document, "icon.json"), JSON.stringify({
+  fill: { solid: "srgb:1.000000,1.000000,1.000000,1.000000" },
+  // Composer stores the topmost group first, unlike SVG paint order.
+  groups: layers.map(([name], index) => ({
+    name: index === 0 ? "Kiki / character green rear card" : "Bouba / character blue front card",
+    layers: [{ "image-name": name, name: name.replace(/\.svg$/, ""), glass: false }],
+    shadow: { kind: "none", opacity: 0 },
+    specular: false,
+    translucency: { enabled: false, value: 0 },
+  })).reverse(),
+  "supported-platforms": { squares: "shared" },
+}, null, 2) + "\n");
+await writeFile(resolve(directory, "README.md"), `# Frankie Cards / character blue and green\n\nGenerated from \`../frankcards-app-icon.svg\`. Run \`npm run icons:composer\` after editing the master.\n\n- \`01-background.svg\`: opaque white icon canvas, #FFFFFF.\n- \`02-kiki-card.svg\`: original Kiki on the rear green card, #9CA283.\n- \`03-bouba-card.svg\`: original Bouba on the front blue card, #9AB1CC.\n\nCard colours come from the original FemaleFigure/MaleFigure clothing. The editable Icon Composer document is \`../AppIcon.icon\`. It uses an opaque solid background and two separate card groups. Glass effects are off to preserve the design. Do not redraw the original Bouba/Kiki paths or bake a rounded icon mask into any layer. The system supplies the icon enclosure. The web logo omits the white canvas.\n\nApple workflow: https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer\n`);
+console.log(`Updated character-colour layers and ${document}.`);

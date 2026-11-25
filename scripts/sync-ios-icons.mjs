@@ -1,4 +1,4 @@
-import { access, readdir } from "node:fs/promises";
+import { access, copyFile, cp, readdir, readFile, writeFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
@@ -29,7 +29,7 @@ function renderOpaqueIcon(width, height, output) {
     "-i",
     sourceIcon,
     "-filter_complex",
-    `[0:v]scale=${width}:${height}:flags=lanczos[icon];color=c=0xF7F7F1:s=${width}x${height}[background];[background][icon]overlay=0:0:format=auto,format=rgb24`,
+    `[0:v]scale=${width}:${height}:flags=lanczos[icon];color=c=0xFFFFFF:s=${width}x${height}[background];[background][icon]overlay=0:0:format=auto,format=rgb24`,
     "-frames:v",
     "1",
     output,
@@ -45,7 +45,7 @@ try {
 try {
   await access(sourceIcon);
 } catch {
-  throw new Error("The Frankie Cards SVG icon source is missing.");
+  throw new Error("The Frankie Cards PNG icon source is missing. Run `npm run icons:generate` first.");
 }
 
 const iconNames = (await readdir(iosSourceDirectory))
@@ -71,4 +71,23 @@ for (const iconName of iconNames) {
   }
 }
 
-console.log(`Rendered ${iconNames.length} opaque iOS icons from the Icon Composer export.`);
+// Keep the fallback asset manifest reproducible after `tauri ios init`.
+await copyFile(resolve(projectRoot, "src-tauri/icons/ios/Contents.json"), resolve(destinationDirectory, "Contents.json"));
+
+// Generated Tauri projects are ignored. Re-add the tracked Composer document
+// whenever the generated project is recreated, keeping app identifiers intact.
+const appleProject = resolve(projectRoot, "src-tauri/gen/apple");
+await cp(resolve(projectRoot, "src-tauri/icons/AppIcon.icon"), resolve(appleProject, "AppIcon.icon"), { recursive: true });
+const specification = resolve(appleProject, "project.yml");
+const current = await readFile(specification, "utf8");
+if (!current.includes("- path: AppIcon.icon")) {
+  if (!current.includes("- path: Assets.xcassets")) throw new Error("Cannot find the generated iOS assets entry in project.yml.");
+  await writeFile(specification, current.replace("- path: Assets.xcassets", "- path: Assets.xcassets\n      - path: AppIcon.icon\n        type: file\n        buildPhase: resources"));
+}
+run("xcodegen", ["generate", "--spec", specification, "--project", appleProject]);
+// XcodeGen 2.46 still maps .icon to the legacy Windows icon wrapper type.
+// Xcode's native Composer type routes the package through the asset compiler.
+const projectFile = resolve(appleProject, "conversation-cards.xcodeproj/project.pbxproj");
+const project = await readFile(projectFile, "utf8");
+await writeFile(projectFile, project.replace(/lastKnownFileType = wrapper\.icon; path = AppIcon\.icon;/g, "lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon;"));
+console.log(`Synced ${iconNames.length} opaque iOS fallbacks and the layered AppIcon.icon document.`);

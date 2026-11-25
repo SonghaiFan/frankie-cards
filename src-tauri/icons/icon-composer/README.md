@@ -1,10 +1,11 @@
-# Frankie Cards Icon Composer layers
+# Frankie Cards / character blue and green
 
-Import the SVGs in numerical order into Icon Composer. They use the actual Frankie Cards female figure and product card language.
+Generated from `../frankcards-app-icon.svg`. Run `npm run icons:composer` after editing the master.
 
-1. `01-background.svg` — full-bleed product background
-2. `02-conversation-card.svg` — two overlapping existing-style conversation cards in the app's pale blue and ivory
-3. `03-female.svg` — existing olive-cardigan character, without hands or coffee
-4. `04-hands-and-coffee.svg` — existing hands and coffee cup, for the foreground glass layer
+- `01-background.svg`: opaque white icon canvas, #FFFFFF.
+- `02-kiki-card.svg`: original Kiki on the rear green card, #9CA283.
+- `03-bouba-card.svg`: original Bouba on the front blue card, #9AB1CC.
 
-Keep the background opaque. In Icon Composer, use modest Liquid Glass on layers 2 and 4; keep the character layer mostly opaque for visual fidelity.
+Card colours come from the original FemaleFigure/MaleFigure clothing. The editable Icon Composer document is `../AppIcon.icon`. It uses an opaque solid background and two separate card groups. Glass effects are off to preserve the design. Do not redraw the original Bouba/Kiki paths or bake a rounded icon mask into any layer. The system supplies the icon enclosure. The web logo omits the white canvas.
+
+Apple workflow: https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer

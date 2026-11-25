@@ -10,12 +10,12 @@
       "crop": [
         0,
         0,
-        1468,
-        1247
+        1720,
+        1224
       ],
       "source_size": [
-        1468,
-        1247
+        1720,
+        1224
       ]
     }
   ],
@@ -25,8 +25,8 @@
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Current local guest home with approved Frankie signature; branding-only source updates.",
-      "captured_on": "2026-11-06"
+      "note": "Current local guest home with the transparent character-blue/green double-card logo.",
+      "captured_on": "2026-11-25"
     }
   ]
 }

@@ -48,9 +48,7 @@ const GameIntroPanel: React.FC<GameIntroPanelProps> = ({
           transition={{ layout: { duration: reducedMotion ? 0 : 0.82, ease: languageLayoutEase } }}
           aria-label="Frankie Cards"
         >
-          <span className="sr-only">Frankie </span>
-          <span aria-hidden="true" className="frankie-signature" />
-          <span>Cards</span>
+          <img className="frankie-brand-mark" src="/frankie-cards-logo.svg" alt="" width="256" height="256" />
         </motion.h1>
       </motion.div>
       <motion.div

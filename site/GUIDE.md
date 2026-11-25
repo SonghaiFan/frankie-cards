@@ -60,13 +60,13 @@ The introduction copies `public/frankcards-site.css` into the build as `brand.cs
 
 ## Frankie brand source / Frankie 品牌来源
 
-The approved wordmark is `docs/readme/assets/frankie.svg`, copied to `public/frankie-signature.svg`. The legacy `public/frank-signature.svg` path also carries the approved artwork for compatibility. App headers use `.frankie-signature` in `src/App.css`, `GameIntroPanel.tsx` and `GameLibrary.tsx`; public pages use the same SVG in both `src/ExternalSite.tsx` and `public/{marketing,privacy,support}/index.html`. Preserve auth storage keys, application identifiers, domains and support addresses when changing visible branding.
+The logo uses the selected A double-card geometry and the user's 2026-11-25 colour update: original character blue #9AB1CC and green #9CA283. Its canonical master is `src-tauri/icons/frankcards-app-icon.svg` with a white icon canvas; `public/frankie-cards-logo.svg` is the transparent web version. App headers use `.frankie-brand-mark` in `src/App.css`, `GameIntroPanel.tsx` and `GameLibrary.tsx`; settings, loading states and public pages use the same artwork. Legacy signature URLs and `docs/readme/assets/frankie.svg` remain compatibility copies of this new mark. Preserve auth storage keys, application identifiers, domains and support addresses when changing visible branding.
 
-品牌字标来自已确认的 Frankie SVG。更新视觉品牌时，不要改动账号存储键、应用标识、服务域名或支持邮箱。
+品牌标志保留双卡结构和 app 原 Bouba/Kiki 轮廓，采用人物原蓝绿配色：应用图标用白底，应用内 logo 用透明底。更新视觉品牌时，不要改动账号存储键、应用标识、服务域名或支持邮箱。
 
-The existing icon illustration source is `src-tauri/icons/frankcards-app-icon.svg`. Its signature is the approved Frankie path. Render it at 1024×1024 with CairoSVG to `src-tauri/icons/frankcards-app-icon.png` and `app-icon.png`, then resize a 512×512 version to `public/icon.png` and `docs/readme/assets/icon.png`. Run `npm run icons:generate`, then `node scripts/sync-ios-icons.mjs` if the generated iOS project exists. The latter updates local ignored generated assets as well as tracked source icon sizes. Browser icon references in `index.html` use a version query to invalidate the former Frank artwork. Native product/window names already say Frankie Cards; identifiers intentionally retain their existing values.
+Run `npm run icons:generate` to render all web and native sizes, synchronize compatibility copies, and regenerate the editable `src-tauri/icons/AppIcon.icon` document. Run `npm run ios:sync-icons` if the generated iOS project exists. The latter updates ignored generated assets and Xcode project references as well as tracked opaque fallback icon sizes. Browser icon references use `?v=20261125`. See `docs/branding.md` for dependencies, file types and verification details. Native product/window names and identifiers retain their existing values.
 
-品牌图标保留已有插画，替换签名字形后按现有命令生成各尺寸；浏览器图标版本参数用于刷新旧缓存。
+品牌图标已替换为双卡定稿，按上述命令重新生成各尺寸及 Icon Composer 文件；浏览器图标版本参数用于刷新旧缓存。
 
 After a visible header or icon change, recapture `site/assets/library-current.png`, `site/assets/settings-current.png` and `docs/readme/assets/ui.png` from the local guest app. Update crop/source dimensions and provenance in `docs/readme/banner.json` and `source-version.json`, then rebuild that one banner with `python3 docs/readme/build.py docs/readme/banner.json --png` (CairoSVG and Cairo required). The 2026-11-06 refresh replaces embedded old Frank branding without changing the approved banner layout.
 

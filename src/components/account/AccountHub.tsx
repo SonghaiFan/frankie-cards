@@ -35,7 +35,7 @@ function PanelLoadingFallback({ alignEnd, onClose }: PanelLoadingFallbackProps) 
       >
         <button className="account-icon-button account-sheet-close" onClick={onClose} aria-label={t("account.close")}>×</button>
         <div className="account-panel-loading-mark" aria-hidden="true">
-          <img src="/card-icon.svg" alt="" />
+          <img src="/frankie-cards-logo.svg" alt="" style={{ borderRadius: "22.22%" }} />
         </div>
         <p role="status" aria-live="polite">{t("account.loadingPanel")}</p>
       </section>

@@ -4,8 +4,8 @@ type ExternalPage = "marketing" | "privacy" | "support";
 
 const Brand = () => (
   <a className="site-brand" href="/" aria-label="Frankie Cards home">
-    <img src="/frankie-signature.svg" alt="Frankie" width="96" height="33" />
-    <strong>Cards</strong>
+    <img src="/frankie-cards-logo.svg" alt="" width="40" height="40" />
+    <strong>Frankie Cards</strong>
   </a>
 );
 

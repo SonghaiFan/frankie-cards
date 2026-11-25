@@ -1864,15 +1864,14 @@ body {
     0 4px 9px var(--material-shadow-mid);
 }
 
-.frankie-signature {
+.frankie-brand-mark {
   display: inline-block;
-  width: 3.65em;
-  height: 1.35em;
-  margin-right: 0.12em;
-  vertical-align: -0.18em;
-  background: currentColor;
-  -webkit-mask: url("/frankie-signature.svg") center / contain no-repeat;
-  mask: url("/frankie-signature.svg") center / contain no-repeat;
+  width: 2.15em;
+  height: 2.15em;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 22.22%;
 }
 
 .account-toolbar {
