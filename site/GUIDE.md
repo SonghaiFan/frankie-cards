@@ -64,6 +64,8 @@ The logo uses the selected A double-card geometry and the user's 2026-11-25 colo
 
 品牌标志保留双卡结构和 app 原 Bouba/Kiki 轮廓，采用人物原蓝绿配色：应用图标用白底，应用内 logo 用透明底。更新视觉品牌时，不要改动账号存储键、应用标识、服务域名或支持邮箱。
 
+The logo's `cards` and default Latin UI text use self-hosted Allo 1.1.0. Keep `public/fonts/allo/OFL.txt` and `source.json` with the unmodified font files. The introduction copies that directory and uses relative font CSS links for both languages. The app preloads its Friendly variable WOFF2 once, while system CJK fonts handle Chinese. The Frankie SVG is unchanged; its layout width is 3.65em, with `cards` tracking -0.02em.
+
 Run `npm run icons:generate` to render all web and native sizes, synchronize compatibility copies, and regenerate the editable `src-tauri/icons/AppIcon.icon` document. Run `npm run ios:sync-icons` if the generated iOS project exists. The latter updates ignored generated assets and Xcode project references as well as tracked opaque fallback icon sizes. Browser icon references use `?v=20261125-corners`. See `docs/branding.md` for dependencies, file types and verification details. Native product/window names and identifiers retain their existing values.
 
 品牌图标已替换为双卡定稿，按上述命令重新生成各尺寸及 Icon Composer 文件；浏览器图标版本参数用于刷新旧缓存。

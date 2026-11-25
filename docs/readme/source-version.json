@@ -1,13 +1,13 @@
 {
   "repository": "frankie-cards",
-  "source_commit": "d36d39aa9edfde2f501b71bb5c2e76e7b9805602",
+  "source_commit": "9d0de40a41c0ec3dbf95a21f8cb7509fb69ab573",
   "captured_on": "2026-11-25",
-  "source_state": "Local working tree at source_commit plus the reference-based lockup and top-right card symbols.",
+  "source_state": "Local working tree at source_commit plus self-hosted Allo typography, a smaller signature and wider cards tracking.",
   "materials": [
     {
       "file": "assets/ui.png",
       "kind": "current local app screenshot",
-      "note": "Real guest landing page, with reference-based arrangement of the original signature and vector assets.",
+      "note": "Actual guest landing page with the typography update. Existing signature and double-card SVG paths are preserved.",
       "captured_on": "2026-11-25"
     }
   ],

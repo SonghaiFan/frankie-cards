@@ -1,0 +1,22 @@
+{
+  "family": "Allo",
+  "version": "1.1.0",
+  "source": "https://github.com/joshpuckett/allo/releases/tag/v1.1.0",
+  "specimen": "https://allo.joshpuckett.me/",
+  "license": "OFL-1.1",
+  "roundness": 50,
+  "files": {
+    "AlloVariableFriendly.woff2": {
+      "sha256": "80e5025120327a4bf790e2ad19131c3002d2b4c8525c5515a34563a9ee62d30e",
+      "bytes": 291460
+    },
+    "Allo-Oblique.woff2": {
+      "sha256": "f5050bdc66476e994dc41a5e3f782adeec67a5e64c835114a79aac6df164eb5b",
+      "bytes": 57444
+    },
+    "Allo-BoldOblique.woff2": {
+      "sha256": "a358eee812771d16b3d9ace32b613dc61e7ae6c731100a07d97a876f4ea31ea7",
+      "bytes": 67152
+    }
+  }
+}

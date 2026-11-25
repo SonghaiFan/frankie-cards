@@ -17,6 +17,12 @@ Blue comes from `MaleFigure.tsx`'s default clothing colour; green comes from `Fe
 
 The landing page and library loading state share `FrankieBrand.tsx`: the original handwritten **Frankie** signature above lowercase **cards**, with the cropped double-card symbol at the right of that lower row. This follows the supplied image as a layout reference, without substituting its raster shapes. The signature master is `docs/readme/assets/frankie.svg` (481 × 164 viewBox), restored unchanged from `cbfce05`. `public/frankie-signature.svg` and `public/frank-signature.svg` are copies of that signature. The icon generator must preserve this independent wordmark rather than overwrite it with double-card artwork.
 
+## Typography
+
+The logo's lowercase `cards` and the app's default Latin text use [Allo](https://allo.joshpuckett.me/), version 1.1.0 by Josh Puckett. The official Friendly variable WOFF2 fixes roundness at the font's default 50 and retains variable weight (100–900) and optical size. The logo uses weight 900, automatic optical sizing and -0.02em tracking. Existing UI weights are preserved. The Frankie signature remains the original vector artwork, reduced to 3.65em × 1.245em (about 85% of the word `cards`' width).
+
+Files are self-hosted under `public/fonts/allo/`: Friendly variable, regular/bold obliques, CSS, the original SIL OFL 1.1 license, and a source/version/SHA256 record. The normal font is preloaded once; no external font service is required. Chinese characters fall back to system CJK fonts. Monospace/code fonts are unchanged. Public information pages and the bilingual introduction load the same family using relative asset paths.
+
 ## Regenerate assets
 
 ```sh
